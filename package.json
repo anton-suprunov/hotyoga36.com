@@ -1,0 +1,34 @@
+{
+  "name": "static-site-starter",
+  "description": "Starter template for static websites",
+  "author": "Anton Suprunov",
+  "version": "0.0.1",
+  "repository": "",
+  "scripts": {
+    "start": "rm -rf dist/ && start http://localhost:3333 && brunch watch --server",
+    "prod": "rm -rf dist/ && mkdir dist && brunch build --production",
+    "eslint:fix": "eslint/bin/eslint.js --fix app/**/*.js"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize.css": "^6.0.0"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2",
+    "autoprefixer": "^6.7.7",
+    "babel-brunch": "~6.0",
+    "babel-preset-latest": "^6",
+    "brunch": "^2",
+    "clean-css-brunch": "^2.10.0",
+    "eslint": "^3.19.0",
+    "eslint-brunch": "^3.12.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "open": "0.0.5",
+    "postcss-brunch": "^2.0.5",
+    "sass-brunch": "^2.10.4",
+    "uglify-js-brunch": "^2.10.0"
+  }
+}
