@@ -1,0 +1,22 @@
+.header {
+  height: 132px;
+  background-color: $color-bg-dark;
+  display: flex;
+}
+
+.logo {
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-position: 0 29px;
+  width: 245px;
+  background-size: 245px 62px;
+  display: block;
+  text-indent: -999px;
+  overflow: hidden;
+  height: 100%;
+}
+
+
+.menu {
+  display: flex !important;
+}
