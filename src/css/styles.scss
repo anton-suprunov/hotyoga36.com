@@ -1,9 +1,15 @@
 @import "normalize.css/normalize";
-@import "responsive-nav/responsive-nav";
+//@import "responsive-nav/responsive-nav";
+@import "slick-carousel/slick/slick.scss";
+@import "slick-carousel/slick/slick-theme.scss";
 
 @import "vars";
 @import "mixins";
 @import "fonts";
 @import "base";
+@import "spritesheet";
+//@import "nav";
 
 @import "header";
+@import "slideshow";
+@import "footer";

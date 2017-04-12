@@ -1,9 +1,23 @@
+*, 
+*:before, 
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   padding: 0;
-  margin: 0
+  margin: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
   padding-left: 47px;
   padding:0 2vw;
+  position: relative;
+  height: 100%;
 }

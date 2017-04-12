@@ -2,6 +2,8 @@
   height: 132px;
   background-color: $color-bg-dark;
   display: flex;
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
@@ -14,9 +16,70 @@
   text-indent: -999px;
   overflow: hidden;
   height: 100%;
+  position: absolute;
 }
 
+.nav {
+  margin-top: 32px;
+  margin-left: 30%;
+  min-width: 70%;
+}
 
 .menu {
   display: flex !important;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  &.menu_sub {
+    left: 0;
+    display: none !important;
+    //background-color: lighten($color-bg-dark, 10%);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.menu__dropdown {
+  position: absolute;
+  top: 38px;
+  left: -20px;
+  padding-top: 62px
+}
+
+.menu__item {
+  margin: 0 2%;
+  width: auto !important;
+  position: relative;
+  
+  &:hover {
+    .menu {
+      display: block !important;
+    }
+    .menu__link.menu__link_top {
+      //background-color: $color-bg-lighter;
+      background-color: lighten($color-bg-dark, 10%);
+    }
+  }  
+  
+  &.menu__item_sub {
+    margin: 0;
+    
+    .menu__link {
+      font-size: 0.95em;
+      line-height: 44px;
+      &:hover {
+        background-color: $color-bg-dark;
+      }
+    }
+  }
+}
+
+.menu__link {
+  color: $color-menu;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 68px;
+  display: block;
+  padding: 0 15px;
 }

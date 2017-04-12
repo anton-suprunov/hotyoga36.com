@@ -1,0 +1,23 @@
+.slideshow {
+  margin-bottom: 0 !important;
+}
+
+.slideshow__img {
+  max-width: 100%;
+}
+
+.slick-dots {
+  bottom: 20px;
+  
+  li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+      
+    &.slick-active {
+      background-color: #fff;
+    }
+  }
+}
