@@ -7,7 +7,8 @@
   "scripts": {
     "start": "rm -rf dist/ && start http://localhost:3333 && brunch watch --server",
     "prod": "rm -rf dist/ && mkdir dist && brunch build --production",
-    "eslint:fix": "eslint/bin/eslint.js --fix app/**/*.js"
+    "eslint:fix": "eslint/bin/eslint.js --fix app/**/*.js",
+     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "jquery": "^3.2.1",
