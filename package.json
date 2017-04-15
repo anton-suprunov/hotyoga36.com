@@ -8,9 +8,12 @@
     "start": "rm -rf dist/ && start http://localhost:3333 && brunch watch --server",
     "prod": "rm -rf dist/ && mkdir dist && brunch build --production",
     "eslint:fix": "eslint/bin/eslint.js --fix app/**/*.js",
-     "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
+    "animate.scss": "0.0.6",
+    "animatewithsass": "^3.2.1",
     "jquery": "^3.2.1",
     "normalize.css": "^6.0.0",
     "responsive-nav": "^1.0.39",

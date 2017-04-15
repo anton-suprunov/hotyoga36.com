@@ -1,3 +1,10 @@
 $color-bg-dark: #000;
 $color-bg-lighter: #333;
 $color-menu: #fff;
+
+$breakpoints: (
+  'mobile':  ( min-width:  320px ),
+  'mobileonly' : (max-width: 979px),
+  //'tablet': ( min-width:  480px ),
+  'desktop':  ( min-width: 980px )
+) !default;

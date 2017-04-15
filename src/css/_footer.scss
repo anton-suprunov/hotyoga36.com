@@ -1,89 +1,41 @@
 .footer {
-  /* http://colorzilla.com/gradient-editor/#f7901e+0,ee3931+25,e22c43+50,d32757+75,ab246c+100,7db9e8+100 */
-  background: #f7901e; /* Old browsers */
-  background: -moz-linear-gradient(left,  #f7901e 0%, #ee3931 25%, #e22c43 50%, #d32757 75%, #ab246c 100%, #7db9e8 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #f7901e 0%,#ee3931 25%,#e22c43 50%,#d32757 75%,#ab246c 100%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #f7901e 0%,#ee3931 25%,#e22c43 50%,#d32757 75%,#ab246c 100%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7901e', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
-  
-  height: 30%;
+  background: linear-gradient(to right,  #f7901e 0%,#ee3931 25%,#e22c43 50%,#d32757 75%,#ab246c 100%,#7db9e8 100%);
+  height: 120px;
   position: relative;
+  
+  @include mq('desktop') {
+    height: 230px;  
+  }
 }
 
 .footer__36 {
   @extend .sprite;
   @extend .sprite-36;
+  
+  left: 0;
   position: absolute;
-  //left: 0;
   top: 25px;
+  
+  @include mq('desktop') {}
 }
 
 .footer__adr {
   margin: 0;
   padding: 0;
   position: absolute;
-  bottom: 30px;
+  left: 0;
+  
+  @include mq('mobileonly') {
+    left: 70px;
+    top: 15px;  
+  }
+  
+  @include mq('desktop') {
+    bottom: 30px;
+  }
 }
 
 .footer__adr-email {
   color: #000;
   text-decoration: none;
-}
-
-.icons {
-  //margin: 7px auto 0;
-  position: absolute;
-  right: 0;
-  bottom: 30px;
-  width: 220px;
-}
-
-.icons__icon {
-  @extend .sprite;
-  
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-  background-repeat: no-repeat;
-  text-indent: -999px;
-  overflow: hidden;
-  margin-right: 10px;
-
-  &:last-child { margin-right: 0; }
-
-  &.icons__icon_telegram {
-    @extend .sprite-social-telegram;
-    
-    &:hover {
-      @extend .sprite-social-telegram-hover;
-    }
-  }
-  &.icons__icon_vk {
-    @extend .sprite-social-vk;
-    
-    &:hover {
-      @extend .sprite-social-vk-hover;
-    }
-  }
-  &.icons__icon_instagram {
-    @extend .sprite-social-insta;
-    
-    &:hover {
-      @extend .sprite-social-insta-hover;
-    }
-  }
-  &.icons__icon_fb {
-    @extend .sprite-social-fb;
-    
-    &:hover {
-      @extend .sprite-social-fb-hover;
-    }
-  }
-  &.icons__icon_email {
-    @extend .sprite-social-email;
-    
-    &:hover {
-      @extend .sprite-social-email-hover;
-    }
-  }
 }

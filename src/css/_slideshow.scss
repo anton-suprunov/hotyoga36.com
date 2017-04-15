@@ -2,8 +2,17 @@
   margin-bottom: 0 !important;
 }
 
-.slideshow__img {
-  max-width: 100%;
+//.slideshow__img { max-width: 100%; }
+
+.slideshow__slide {
+  background: {
+    image: url(../img/slideshow-1.jpg);
+    size: cover;
+    position: 50% 50%;
+    repeat: no-repeat;
+  }
+  text-indent: -999px;
+  overflow: hidden;
 }
 
 .slick-dots {
