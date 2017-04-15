@@ -1,2 +1,205 @@
-!function(){"use strict";var globals="undefined"==typeof global?self:global;if("function"!=typeof globals.require){var modules={},cache={},aliases={},has={}.hasOwnProperty,expRe=/^\.\.?(\/|$)/,expand=function(root,name){for(var part,results=[],parts=(expRe.test(name)?root+"/"+name:name).split("/"),i=0,length=parts.length;i<length;i++)part=parts[i],".."===part?results.pop():"."!==part&&""!==part&&results.push(part);return results.join("/")},dirname=function(path){return path.split("/").slice(0,-1).join("/")},localRequire=function(path){return function(name){var absolute=expand(dirname(path),name);return globals.require(absolute,path)}},initModule=function(name,definition){var hot=hmr&&hmr.createHot(name),module={id:name,exports:{},hot:hot};return cache[name]=module,definition(module.exports,localRequire(name),module),module.exports},expandAlias=function(name){return aliases[name]?expandAlias(aliases[name]):name},_resolve=function(name,dep){return expandAlias(expand(dirname(name),dep))},require=function(name,loaderPath){null==loaderPath&&(loaderPath="/");var path=expandAlias(name);if(has.call(cache,path))return cache[path].exports;if(has.call(modules,path))return initModule(path,modules[path]);throw new Error("Cannot find module '"+name+"' from '"+loaderPath+"'")};require.alias=function(from,to){aliases[to]=from};var extRe=/\.[^.\/]+$/,indexRe=/\/index(\.[^\/]+)?$/,addExtensions=function(bundle){if(extRe.test(bundle)){var alias=bundle.replace(extRe,"");has.call(aliases,alias)&&aliases[alias].replace(extRe,"")!==alias+"/index"||(aliases[alias]=bundle)}if(indexRe.test(bundle)){var iAlias=bundle.replace(indexRe,"");has.call(aliases,iAlias)||(aliases[iAlias]=bundle)}};require.register=require.define=function(bundle,fn){if(bundle&&"object"==typeof bundle)for(var key in bundle)has.call(bundle,key)&&require.register(key,bundle[key]);else modules[bundle]=fn,delete cache[bundle],addExtensions(bundle)},require.list=function(){var list=[];for(var item in modules)has.call(modules,item)&&list.push(item);return list};var hmr=globals._hmr&&new globals._hmr(_resolve,require,modules,cache);require._cache=cache,require.hmr=hmr&&hmr.wrap,require.brunch=!0,globals.require=require}}(),function(){"undefined"==typeof window?this:window;require.register("js/app.js",function(exports,require,module){"use strict";function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{"default":obj}}var _jquery=require("jquery"),_jquery2=_interopRequireDefault(_jquery),_responsiveNav=require("responsive-nav"),_slickCarousel=(_interopRequireDefault(_responsiveNav),require("slick-carousel")),init=(_interopRequireDefault(_slickCarousel),function(){(0,_jquery2["default"])(".slideshow").slick({prevArrow:null,nextArrow:null,autoplay:!0,fade:!0,dots:!0})});(0,_jquery2["default"])(init)}),require.register("___globals___",function(exports,require,module){})}(),require("___globals___"),require("js/app");
+(function() {
+  'use strict';
+
+  var globals = typeof global === 'undefined' ? self : global;
+  if (typeof globals.require === 'function') return;
+
+  var modules = {};
+  var cache = {};
+  var aliases = {};
+  var has = {}.hasOwnProperty;
+
+  var expRe = /^\.\.?(\/|$)/;
+  var expand = function(root, name) {
+    var results = [], part;
+    var parts = (expRe.test(name) ? root + '/' + name : name).split('/');
+    for (var i = 0, length = parts.length; i < length; i++) {
+      part = parts[i];
+      if (part === '..') {
+        results.pop();
+      } else if (part !== '.' && part !== '') {
+        results.push(part);
+      }
+    }
+    return results.join('/');
+  };
+
+  var dirname = function(path) {
+    return path.split('/').slice(0, -1).join('/');
+  };
+
+  var localRequire = function(path) {
+    return function expanded(name) {
+      var absolute = expand(dirname(path), name);
+      return globals.require(absolute, path);
+    };
+  };
+
+  var initModule = function(name, definition) {
+    var hot = hmr && hmr.createHot(name);
+    var module = {id: name, exports: {}, hot: hot};
+    cache[name] = module;
+    definition(module.exports, localRequire(name), module);
+    return module.exports;
+  };
+
+  var expandAlias = function(name) {
+    return aliases[name] ? expandAlias(aliases[name]) : name;
+  };
+
+  var _resolve = function(name, dep) {
+    return expandAlias(expand(dirname(name), dep));
+  };
+
+  var require = function(name, loaderPath) {
+    if (loaderPath == null) loaderPath = '/';
+    var path = expandAlias(name);
+
+    if (has.call(cache, path)) return cache[path].exports;
+    if (has.call(modules, path)) return initModule(path, modules[path]);
+
+    throw new Error("Cannot find module '" + name + "' from '" + loaderPath + "'");
+  };
+
+  require.alias = function(from, to) {
+    aliases[to] = from;
+  };
+
+  var extRe = /\.[^.\/]+$/;
+  var indexRe = /\/index(\.[^\/]+)?$/;
+  var addExtensions = function(bundle) {
+    if (extRe.test(bundle)) {
+      var alias = bundle.replace(extRe, '');
+      if (!has.call(aliases, alias) || aliases[alias].replace(extRe, '') === alias + '/index') {
+        aliases[alias] = bundle;
+      }
+    }
+
+    if (indexRe.test(bundle)) {
+      var iAlias = bundle.replace(indexRe, '');
+      if (!has.call(aliases, iAlias)) {
+        aliases[iAlias] = bundle;
+      }
+    }
+  };
+
+  require.register = require.define = function(bundle, fn) {
+    if (bundle && typeof bundle === 'object') {
+      for (var key in bundle) {
+        if (has.call(bundle, key)) {
+          require.register(key, bundle[key]);
+        }
+      }
+    } else {
+      modules[bundle] = fn;
+      delete cache[bundle];
+      addExtensions(bundle);
+    }
+  };
+
+  require.list = function() {
+    var list = [];
+    for (var item in modules) {
+      if (has.call(modules, item)) {
+        list.push(item);
+      }
+    }
+    return list;
+  };
+
+  var hmr = globals._hmr && new globals._hmr(_resolve, require, modules, cache);
+  require._cache = cache;
+  require.hmr = hmr && hmr.wrap;
+  require.brunch = true;
+  globals.require = require;
+})();
+
+(function() {
+var global = typeof window === 'undefined' ? this : window;
+var __makeRelativeRequire = function(require, mappings, pref) {
+  var none = {};
+  var tryReq = function(name, pref) {
+    var val;
+    try {
+      val = require(pref + '/node_modules/' + name);
+      return val;
+    } catch (e) {
+      if (e.toString().indexOf('Cannot find module') === -1) {
+        throw e;
+      }
+
+      if (pref.indexOf('node_modules') !== -1) {
+        var s = pref.split('/');
+        var i = s.lastIndexOf('node_modules');
+        var newPref = s.slice(0, i).join('/');
+        return tryReq(name, newPref);
+      }
+    }
+    return none;
+  };
+  return function(name) {
+    if (name in mappings) name = mappings[name];
+    if (!name) return;
+    if (name[0] !== '.' && pref) {
+      var val = tryReq(name, pref);
+      if (val !== none) return val;
+    }
+    return require(name);
+  }
+};
+require.register("js/app.js", function(exports, require, module) {
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _responsiveNav = require('responsive-nav');
+
+var _responsiveNav2 = _interopRequireDefault(_responsiveNav);
+
+var _slickCarousel = require('slick-carousel');
+
+var _slickCarousel2 = _interopRequireDefault(_slickCarousel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var init = function init() {
+  //const nav = responsiveNav(".nav", {});
+
+  var headerHeight = (0, _jquery2.default)('.header').outerHeight(),
+      footerHeight = (0, _jquery2.default)('.footer').outerHeight(),
+      windowHeight = (0, _jquery2.default)(window).outerHeight(),
+      slideshowHeight = windowHeight - headerHeight - footerHeight;
+
+  (0, _jquery2.default)('.slideshow__slide').height(slideshowHeight);
+
+  (0, _jquery2.default)('.slideshow').slick({
+    prevArrow: null,
+    nextArrow: null,
+    autoplay: true,
+    fade: true,
+    dots: true
+  });
+
+  (0, _jquery2.default)('.nav__toggle').on('click', function (e) {
+    (0, _jquery2.default)('.menu').toggleClass('menu_active menu_inactive');
+  });
+  (0, _jquery2.default)('.menu').addClass('menu_inactive');
+  setTimeout(function () {
+    (0, _jquery2.default)('.menu').addClass('menu_loaded');
+  }, 1000);
+}; //TODO: ADD PLUGIN TO REMOVE UNUSED CSS
+//TODO: ADD RETINA SOCIAL ICONS
+//TODO: hide social icons on mobile
+
+(0, _jquery2.default)(init);
+
+});
+
+require.register("___globals___", function(exports, require, module) {
+  
+});})();require('___globals___');
+
+require('js/app');
 //# sourceMappingURL=app.js.map
