@@ -170,7 +170,9 @@ var init = function init() {
   var headerHeight = (0, _jquery2.default)('.header').outerHeight(),
       footerHeight = (0, _jquery2.default)('.footer').outerHeight(),
       windowHeight = (0, _jquery2.default)(window).outerHeight(),
-      slideshowHeight = windowHeight - headerHeight - footerHeight;
+
+  //slideshowHeight = windowHeight - headerHeight - footerHeight;
+  slideshowHeight = windowHeight - headerHeight;
 
   (0, _jquery2.default)('.slideshow__slide').height(slideshowHeight);
 
@@ -192,6 +194,7 @@ var init = function init() {
 }; //TODO: ADD PLUGIN TO REMOVE UNUSED CSS
 //TODO: ADD RETINA SOCIAL ICONS
 //TODO: hide social icons on mobile
+//TODO: Only include social widgets for desktop
 
 (0, _jquery2.default)(init);
 
