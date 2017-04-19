@@ -4,7 +4,8 @@
   position: relative;
   
   @include mq('desktop') {
-    height: 230px;  
+    //height: 230px;
+    height: 360px;
   }
 }
 
@@ -39,3 +40,47 @@
   color: #000;
   text-decoration: none;
 }
+
+.widgets {
+  margin: 0 auto;
+  justify-content: space-between;
+  padding-top: 10px;
+  max-width: 650px;
+  display: none;
+  
+  @include mq('desktop') {
+    display: flex;
+    position: relative;
+    left: 30px;
+  }
+  @include mq('desktop-large') {
+    left: 0;
+  }
+}
+
+.instagram-widget {
+  background: #fff;
+  padding: 48px 2px 0;
+  position: relative;
+  
+  &:before {
+    content: "Мы в Instagram";
+    position: absolute;
+    top: 0px;
+    height: 47px;
+    line-height: 47px;
+    left: 0;
+    right: 0;
+    font-size: 16px;
+    text-align: left;
+    text-indent: 50px;
+    font-weight: 600;
+    background: {
+      image: url(../img/instagram-logo.png);
+      repeat: no-repeat;
+      size: auto 50%;
+      position: 15px 50%;
+    }
+  }
+}
+

@@ -3,19 +3,26 @@
   position: absolute;
   right: 0;
   bottom: 30px;
-  width: 220px;
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  @include mq('desktop-large') {
+    width: 220px;
+  }
 }
 
 .icons__icon {
   @extend .sprite;
   
-  display: inline-block;
+  display: block;
   width: 44px;
   height: 44px;
   background-repeat: no-repeat;
   text-indent: -999px;
   overflow: hidden;
-  margin-right: 10px;
+  margin-top: 10px;
   opacity: 0.8;
 
   &:last-child { margin-right: 0; }
@@ -24,22 +31,10 @@
     opacity: 1;
   }
 
-  &.icons__icon_telegram {
-    //@extend .sprite-telegram;
-  }
-  &.icons__icon_vk {
-    @extend .sprite-vk;
-  }
-  &.icons__icon_instagram {
-    @extend .sprite-instagram;
-  }
-  &.icons__icon_fb {
-    @extend .sprite-fb;
-  }
-  &.icons__icon_youtube {
-    @extend .sprite-youtube;
-  }
-  &.icons__icon_email {
-    //@extend .sprite-social-email;
-  }
+  //&.icons__icon_telegram { @extend .sprite-telegram; }
+  &.icons__icon_vk { @extend .sprite-vk; }
+  &.icons__icon_instagram { @extend .sprite-instagram; }
+  &.icons__icon_fb { @extend .sprite-fb; }
+  &.icons__icon_youtube { @extend .sprite-youtube; }
+  //&.icons__icon_email { @extend .sprite-social-email; }
 }

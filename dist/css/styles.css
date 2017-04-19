@@ -748,10 +748,12 @@ body {
   font-family: 'Roboto', sans-serif; }
 
 .container {
-  padding-left: 47px;
   margin: 0 2vw;
   position: relative;
   height: 100%; }
+  @media (min-width: 980px) {
+    .container {
+      margin: 0 2vw; } }
 
 .sprite, .icons__icon, .footer__36 {
   background-image: url(../img/spritesheet.png);
@@ -882,16 +884,22 @@ body {
   position: absolute;
   right: 0;
   bottom: 30px;
-  width: 220px; }
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  @media (min-width: 1200px) {
+    .icons {
+      width: 220px; } }
 
 .icons__icon {
-  display: inline-block;
+  display: block;
   width: 44px;
   height: 44px;
   background-repeat: no-repeat;
   text-indent: -999px;
   overflow: hidden;
-  margin-right: 10px;
+  margin-top: 10px;
   opacity: 0.8; }
   .icons__icon:last-child {
     margin-right: 0; }
@@ -1147,7 +1155,7 @@ body {
   position: relative; }
   @media (min-width: 980px) {
     .footer {
-      height: 230px; } }
+      height: 360px; } }
 
 .footer__36 {
   left: 0;
@@ -1170,6 +1178,42 @@ body {
 .footer__adr-email {
   color: #000;
   text-decoration: none; }
+
+.widgets {
+  margin: 0 auto;
+  justify-content: space-between;
+  padding-top: 10px;
+  max-width: 650px;
+  display: none; }
+  @media (min-width: 980px) {
+    .widgets {
+      display: flex;
+      position: relative;
+      left: 30px; } }
+  @media (min-width: 1200px) {
+    .widgets {
+      left: 0; } }
+
+.instagram-widget {
+  background: #fff;
+  padding: 48px 2px 0;
+  position: relative; }
+  .instagram-widget:before {
+    content: "Мы в Instagram";
+    position: absolute;
+    top: 0px;
+    height: 47px;
+    line-height: 47px;
+    left: 0;
+    right: 0;
+    font-size: 16px;
+    text-align: left;
+    text-indent: 50px;
+    font-weight: 600;
+    background-image: url(../img/instagram-logo.png);
+    background-repeat: no-repeat;
+    background-size: auto 50%;
+    background-position: 15px 50%; }
 
 
 

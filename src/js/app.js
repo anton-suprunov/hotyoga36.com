@@ -1,6 +1,7 @@
 //TODO: ADD PLUGIN TO REMOVE UNUSED CSS
 //TODO: ADD RETINA SOCIAL ICONS
 //TODO: hide social icons on mobile
+//TODO: Only include social widgets for desktop
 
 import $ from 'jquery';
 import responsiveNav from 'responsive-nav';
@@ -12,7 +13,8 @@ const init = () => {
   const headerHeight = $('.header').outerHeight(),
         footerHeight = $('.footer').outerHeight(),
         windowHeight = $(window).outerHeight(),
-        slideshowHeight = windowHeight - headerHeight - footerHeight;
+        //slideshowHeight = windowHeight - headerHeight - footerHeight;
+        slideshowHeight = windowHeight - headerHeight;
   
   $('.slideshow__slide').height(slideshowHeight);
   

@@ -16,8 +16,12 @@ body {
 }
 
 .container {
-  padding-left: 47px;
+  //padding-left: 47px;
   margin:0 2vw;
   position: relative;
   height: 100%;
+  
+  @include mq('desktop') {
+    margin:0 2vw;
+  }
 }
