@@ -1,0 +1,43 @@
+.icons {
+  //margin: 7px auto 0;
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include mq('desktop') {
+    bottom: 30px;
+  }
+  @include mq('desktop-large') {
+    width: 220px;
+  }
+}
+
+.icons__icon {
+  //@extend .sprite;
+  
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-repeat: no-repeat;
+  text-indent: -999px;
+  overflow: hidden;
+  margin-top: 10px;
+  opacity: 0.8;
+
+  &:last-child { margin-right: 0; }
+  
+  &:hover {
+    opacity: 1;
+  }
+
+  //&.icons__icon_telegram { @extend .icon-telegram; }
+  &.icons__icon_vk { @extend .icon-vk; }
+  &.icons__icon_instagram { @extend .icon-instagram; }
+  &.icons__icon_fb { @extend .icon-fb; }
+  &.icons__icon_youtube { @extend .icon-youtube; }
+  //&.icons__icon_email { @extend .icon-social-email; }
+}

@@ -1,0 +1,96 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-fb-2x {
+  background-image: url(../img/sprite.png);
+  background-position: -256px 0px;
+  width: 84px;
+  height: 80px;
+}
+.icon-fb-3x {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -122px;
+  width: 126px;
+  height: 120px;
+}
+.icon-fb {
+  background-image: url(../img/sprite.png);
+  background-position: -260px -244px;
+  width: 42px;
+  height: 40px;
+}
+.icon-instagram-2x {
+  background-image: url(../img/sprite.png);
+  background-position: -256px -82px;
+  width: 84px;
+  height: 80px;
+}
+.icon-instagram-3x {
+  background-image: url(../img/sprite.png);
+  background-position: -128px 0px;
+  width: 126px;
+  height: 120px;
+}
+.icon-instagram {
+  background-image: url(../img/sprite.png);
+  background-position: -216px -244px;
+  width: 42px;
+  height: 40px;
+}
+.icon-small-logo {
+  background-image: url(../img/sprite.png);
+  background-position: -256px -164px;
+  width: 48px;
+  height: 70px;
+}
+.icon-vk-2x {
+  background-image: url(../img/sprite.png);
+  background-position: -86px -244px;
+  width: 84px;
+  height: 80px;
+}
+.icon-vk-3x {
+  background-image: url(../img/sprite.png);
+  background-position: -128px -122px;
+  width: 126px;
+  height: 120px;
+}
+.icon-vk {
+  background-image: url(../img/sprite.png);
+  background-position: -172px -244px;
+  width: 42px;
+  height: 40px;
+}
+.icon-youtube-2x {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -244px;
+  width: 84px;
+  height: 80px;
+}
+.icon-youtube-3x {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 126px;
+  height: 120px;
+}
+.icon-youtube {
+  background-image: url(../img/sprite.png);
+  background-position: -342px 0px;
+  width: 42px;
+  height: 40px;
+}

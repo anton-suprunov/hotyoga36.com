@@ -1,0 +1,12 @@
+extends layouts/main.pug
+
+block content
+    -
+        var slideshow = [
+            { title : 'Stay Hydrated', img : '/assets/slideshow-1.jpg' },
+            { title : 'Stay Hydrated', img : '/assets/slideshow-1.jpg' }
+        ];
+
+    section(class="slideshow")
+        each slide, index in slideshow
+            a(href="#" class="slideshow__slide slideshow__slide_" + index style="background-image:url(" + slide.img + ")")= slide.title
