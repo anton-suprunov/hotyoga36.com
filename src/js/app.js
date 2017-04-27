@@ -42,8 +42,8 @@ const init = () => {
         hasVideo = slide.find('iframe').length > 0;
 
       if (hasVideo) {
-        console.log('pause slick');
-        $('.slideshow').slick('slickPause');
+        //console.log('pause slick');
+        //$('.slideshow').slick('slickPause');
       }
   });
 
@@ -61,20 +61,19 @@ const init = () => {
   }
 };
 
-/*
+
 window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
-  var player = new YT.Player('youtube-video', {
-    width : '100%',
-    height : '100%',
-    videoId : 'kR5VOwzVo0',
+  console.log('12132');
+  var player = new YT.Player('DkR5VOwzVo0', {
     events: {
-      'onStateChange': onPlayerStateChange
+      "onStateChange": onPlayerStateChange
     }
   });
 };
 
 function onPlayerStateChange(event) {
-  if (event.data === YT.PlayerState.PLAYING) {
+  console.log(arguments);
+  /*if (event.data === YT.PlayerState.PLAYING) {
     //setTimeout(stopVideo, 6000);
     //done = true;
   }
@@ -87,8 +86,8 @@ function onPlayerStateChange(event) {
       break;
     case 2:
       console.log('video paused at '+player.getCurrentTime());
-  }
+  }*/
 }
-*/
+
 
 $(init);
