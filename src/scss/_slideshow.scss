@@ -17,14 +17,19 @@
 }
 
 .slideshow__text {
-  color: #fff;
-  text-decoration: none;
-  font-size: 70px;
-  text-transform: uppercase;
-  position: absolute;
-  left: 60%;
-  top: 35%;
-  text-shadow: 1px 1px 2px #444;
+  display: none;
+
+  @include mq('desktop') {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: absolute;
+    left: 60%;
+    top: 35%;
+    text-shadow: 1px 1px 2px #444;
+    font-size: 70px;
+  }
 }
 
 .slick-dots {
