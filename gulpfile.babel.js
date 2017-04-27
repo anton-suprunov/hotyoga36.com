@@ -1,8 +1,3 @@
-/**
- * Each task that needs to trigger browser sync, should run
- * .pipe(reload({ stream:true }));
- */
-
 'use strict';
 
 import gulp from 'gulp';
@@ -39,6 +34,7 @@ const sources = {
     js : dirs.src + 'js/app.js',
     html : dirs.src + '*.html',
     templates : dirs.src + '*.pug',
+    layouts : dirs.src + 'layouts/**.pug',
     img : dirs.src + 'img/*.png',
     sprite : dirs.src + 'img/sprite/*.png',
     svg : dirs.src + 'img/*.svg',
@@ -75,7 +71,8 @@ gulp.task('scss', function scss() {
         .pipe(prefix(browserlist))
         .pipe(sourcemaps.write('sourcemaps'))
         .pipe(gulp.dest(destinations.css))
-        .pipe(reload({ stream:true }));
+        //.pipe(reload({ stream:true }));
+        .pipe(browserSync.stream( {match: '**/*.css' } ));
 });
 
 gulp.task('scss:build', function scss() {
@@ -227,11 +224,11 @@ gulp.task('watch', function watch() {
     gulp.watch(sources.img, gulp.series('images'));
     gulp.watch(sources.sprite, gulp.series('png-sprite'));
     gulp.watch(sources.scss, gulp.series('scss'));
-    gulp.watch(sources.js, gulp.series('eslint', 'js'));
-    gulp.watch(sources.html, gulp.series('html'));
+    gulp.watch(sources.js, gulp.series('js'));
+    //gulp.watch(sources.html, gulp.series('html'));
     gulp.watch(sources.svg, gulp.series('svg-sprite'));
     gulp.watch(sources.fonts, gulp.series('fonts'));
-    gulp.watch(sources.templates, gulp.series('templates'));
+    gulp.watch([sources.templates, sources.layouts], gulp.series('templates'));
 });
 
 gulp.task('build', gulp.series('clean', 'png-sprite', gulp.parallel('images', 'scss', 'js', 'assets', 'fonts', 'templates')));

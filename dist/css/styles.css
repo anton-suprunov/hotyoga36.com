@@ -749,12 +749,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  @media (min-width: 980px) {
+  @media (min-width: 1276px) {
     .icons {
       bottom: 30px; } }
-  @media (min-width: 1200px) {
-    .icons {
-      width: 220px; } }
 
 .icons__icon {
   display: block;
@@ -969,12 +966,21 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin-bottom: 0 !important; }
 
 .slideshow__slide {
-  background-image: url(../img/slideshow-1.jpg);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  text-indent: -999px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+
+.slideshow__text {
+  color: #fff;
+  text-decoration: none;
+  font-size: 70px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 60%;
+  top: 35%;
+  text-shadow: 1px 1px 2px #444; }
 
 .slick-dots {
   bottom: 20px; }
@@ -991,7 +997,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background: linear-gradient(to right, #f7901e 0%, #ee3931 25%, #e22c43 50%, #d32757 75%, #ab246c 100%, #7db9e8 100%);
   height: 120px;
   position: relative; }
-  @media (min-width: 980px) {
+  @media (min-width: 1276px) {
     .footer {
       height: 360px; } }
 
@@ -1004,58 +1010,59 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 0; }
-  @media (max-width: 979px) {
+  left: 70px;
+  top: 15px; }
+  @media (min-width: 1276px) {
     .footer__adr {
-      left: 70px;
-      top: 15px; } }
-  @media (min-width: 980px) {
-    .footer__adr {
-      bottom: 30px; } }
+      top: auto;
+      bottom: 30px;
+      left: 0; } }
 
 .footer__adr-email {
   color: #000;
   text-decoration: none; }
 
 .widgets {
-  margin: 0 auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-top: 10px;
-  max-width: 650px;
   display: none; }
-  @media (min-width: 980px) {
+  @media (min-width: 1276px) {
     .widgets {
+      margin: 0 auto;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding-top: 18px;
+      width: 850px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      position: relative;
-      left: 30px; } }
-  @media (min-width: 1200px) {
-    .widgets {
-      left: 0; } }
+      position: absolute;
+      left: 50%;
+      margin-left: -425px; } }
 
-.widget.widget_instagram {
-  background: #fff;
-  padding: 48px 2px 0;
-  position: relative; }
-  .widget.widget_instagram:before {
-    content: "Мы в Instagram";
-    position: absolute;
-    top: 0;
-    height: 47px;
-    line-height: 47px;
-    left: 0;
-    right: 0;
-    font-size: 16px;
-    text-align: left;
-    text-indent: 50px;
-    font-weight: 600;
-    background-image: url(../img/instagram-logo.png);
-    background-repeat: no-repeat;
-    background-size: auto 50%;
-    background-position: 15px 50%; }
+.widget {
+  width: 30%; }
+  .widget.widget_instagram {
+    background: #fff;
+    padding: 63px 0.5% 0;
+    position: relative;
+    width: 31%;
+    height: 323px; }
+    .widget.widget_instagram:before {
+      content: "Мы в Instagram";
+      position: absolute;
+      top: 0;
+      height: 47px;
+      line-height: 47px;
+      left: 0;
+      right: 0;
+      font-size: 16px;
+      text-align: left;
+      text-indent: 50px;
+      font-weight: 600;
+      background-image: url(../img/instagram-logo.png);
+      background-repeat: no-repeat;
+      background-size: auto 50%;
+      background-position: 15px 50%; }
 
 .content {
   padding: 20px 10% 30px; }

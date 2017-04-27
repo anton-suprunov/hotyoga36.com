@@ -6,13 +6,25 @@
 
 .slideshow__slide {
   background: {
-    image: url(../img/slideshow-1.jpg);
+    //image: url(../img/slideshow-1.jpg);
     size: cover;
     position: 50% 50%;
     repeat: no-repeat;
   }
-  text-indent: -999px;
+  //text-indent: -999px;
   overflow: hidden;
+  position: relative;
+}
+
+.slideshow__text {
+  color: #fff;
+  text-decoration: none;
+  font-size: 70px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 60%;
+  top: 35%;
+  text-shadow: 1px 1px 2px #444;
 }
 
 .slick-dots {

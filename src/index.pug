@@ -3,10 +3,21 @@ extends layouts/main.pug
 block content
     -
         var slideshow = [
-            { title : 'Stay Hydrated', img : '/assets/slideshow-1.jpg' },
-            { title : 'Stay Hydrated', img : '/assets/slideshow-1.jpg' }
+            { title : 'Stay<br> Hydrated', img : 'assets/slideshow-1.jpg' },
+            { title : 'Namaste<br> Bitches', img : 'assets/slideshow-2.jpg' },
+            { title : 'Stay<br> Hydrated', img : 'assets/slideshow-3.jpg' },
+            { title : 'Karma Has<br> No Deadline', img : 'assets/slideshow-4.jpg' }
         ];
-
     section(class="slideshow")
         each slide, index in slideshow
-            a(href="#" class="slideshow__slide slideshow__slide_" + index style="background-image:url(" + slide.img + ")")= slide.title
+            a(class="slideshow__slide slideshow__slide_" + index style="background-image:url(" + slide.img + ")")
+                span.slideshow__text!= slide.title
+
+        div.slideshow__slide#youtube-video
+            //video(id="sampleMovie" width="100%" height="100%" preload controls style="width:100%; height: 100%")
+                source(src="assets/video_2017-04-27_02-48-05.mov")
+                //source src="HTML5Sample_Ogg.ogv"
+                //source src="HTML5Sample_WebM.webm"
+
+            //iframe(width="100%" height="100%" src="https://www.youtube.com/embed/DkR5VOwzVo0?controls=0&amp;showinfo=0enablejsapi=1"
+                frameborder="0" allowfullscreen)

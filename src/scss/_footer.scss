@@ -3,7 +3,7 @@
   height: 120px;
   position: relative;
 
-  @include mq('desktop') {
+  @include mq('with-social') {
     //height: 230px;
     height: 360px;
   }
@@ -17,22 +17,21 @@
   position: absolute;
   top: 25px;
 
-  @include mq('desktop') {}
+  //@include mq('desktop') {}
 }
 
 .footer__adr {
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 0;
+  left: 70px;
+  top: 15px;
 
-  @include mq('mobileonly') {
-    left: 70px;
-    top: 15px;
-  }
-
-  @include mq('desktop') {
+  //@include mq('mobileonly') { }
+  @include mq('with-social') {
+    top: auto;
     bottom: 30px;
+    left: 0;
   }
 }
 
@@ -42,27 +41,32 @@
 }
 
 .widgets {
-  margin: 0 auto;
-  justify-content: space-between;
-  padding-top: 10px;
-  max-width: 650px;
   display: none;
 
-  @include mq('desktop') {
+  @include mq('with-social') {
+    margin: 0 auto;
+    justify-content: space-between;
+    padding-top: 18px;
+    width: 850px;
     display: flex;
-    position: relative;
-    left: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left: -425px;
   }
   @include mq('desktop-large') {
-    left: 0;
+    //left: 0;
   }
 }
 
 .widget {
+  width: 30%;
+
   &.widget_instagram {
     background: #fff;
-    padding: 48px 2px 0;
+    padding: 63px 0.5% 0;
     position: relative;
+    width: 31%;
+    height: 323px;
 
     &:before {
       content: "Мы в Instagram";

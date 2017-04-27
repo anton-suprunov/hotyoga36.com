@@ -8,11 +8,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @include mq('desktop') {
+  @include mq('with-social') {
     bottom: 30px;
   }
   @include mq('desktop-large') {
-    width: 220px;
+    //width: 220px;
   }
 }
 

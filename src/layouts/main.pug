@@ -59,20 +59,25 @@ body
 
             div(class="widgets")
                 div.widget.widget_vk
-                    script(type="text/javascript" src="//vk.com/js/api/openapi.js?144")
                     div(id="vk_groups")
-                        // fb widget
+                    script(type="text/javascript" src="//vk.com/js/api/openapi.js?144")
+
+                // fb widget
                 div.widget.widget_fb
-                    div(class="fb-page" data-href="https://www.facebook.com/hotyoga36" data-tabs="timeline" data-width="200"
-                    data-height="340" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
+                    div(class="fb-page" data-href="https://www.facebook.com/hotyoga36" data-tabs="timeline" data-width="255"
+                    data-height="323" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
                     data-show-facepile="false")
                         blockquote(cite="https://www.facebook.com/hotyoga36" class="fb-xfbml-parse-ignore")
                             a(href="https://www.facebook.com/hotyoga36") Hot Yoga 36 - Студия горячей йоги в Петербурге на Рубинштейна 36
-                        // SnapWidget
+
+                // SnapWidget
                 div.widget.widget_instagram
                     div(class="instagram-widget")
+                        <!-- SnapWidget -->
                         iframe(src="https://snapwidget.com/embed/370023" class="snapwidget-widget" allowTransparency="true"
-                        frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:216px; height:288px")
+                            frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:255px; height:255px")
+                        //iframe(src="https://snapwidget.com/embed/370023" class="snapwidget-widget" allowTransparency="true"
+                        //frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:216px; height:288px")
 
             div(class="icons icons_placeholder")
                 a(href="https://www.facebook.com/hotyoga36/" target="_blank" class="icons__icon icons__icon_fb") facebook
@@ -94,7 +99,8 @@ body
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
         // vk widget js
-        VK.Widgets.Group("vk_groups", {mode: 4, height: "270"}, 124085376);
+        VK.Widgets.Group("vk_groups", {mode: 4, height: "270", width: "auto"}, 124085376);
 
+    script(type="text/javascript" src="http://www.youtube.com/iframe_api")
     //script(src="js/vendor.js")
     script(src="js/app.js")

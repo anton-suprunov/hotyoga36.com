@@ -7,5 +7,6 @@ $breakpoints: (
   'mobileonly' : (max-width: 979px),
   //'tablet': ( min-width:  480px ),
   'desktop':  ( min-width: 980px ),
-  'desktop-large': (min-width: 1200px )
+  'desktop-large': (min-width: 1200px ),
+  'with-social' : (min-width: 1276px)
 ) !default;
