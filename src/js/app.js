@@ -27,9 +27,10 @@ const init = () => {
   }).on('beforeChange', function(event, slick, currentSlide, nextSlide){
     var slide = $('.slideshow__slide').eq(currentSlide),
       hasVideo = slide.find('iframe').length > 0;
+
     console.log(hasVideo);
     if (hasVideo) {
-      console.log('replace video');
+      console.log('replace video and restart slick');
       setTimeout(function() {
         replaceVideo(slide);
         $('.slideshow').slick('slickPlay');
@@ -39,7 +40,7 @@ const init = () => {
   }).on('afterChange', function(e, slick, currentSlide) {
     var slide = $('.slideshow__slide').eq(currentSlide),
         hasVideo = slide.find('iframe').length > 0;
-      console.log(hasVideo, slide.find('iframe').length, currentSlide);
+
       if (hasVideo) {
         console.log('pause slick');
         $('.slideshow').slick('slickPause');
@@ -60,6 +61,7 @@ const init = () => {
   }
 };
 
+/*
 window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
   var player = new YT.Player('youtube-video', {
     width : '100%',
@@ -87,5 +89,6 @@ function onPlayerStateChange(event) {
       console.log('video paused at '+player.getCurrentTime());
   }
 }
+*/
 
 $(init);
