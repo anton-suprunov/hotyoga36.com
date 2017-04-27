@@ -1,5 +1,9 @@
 @import "normalize.css/normalize";
 //@import "responsive-nav/responsive-nav";
+
+$slick-font-path: "../assets/";
+$slick-loader-path: "../assets/";
+
 @import "slick-carousel/slick/slick.scss";
 @import "slick-carousel/slick/slick-theme.scss";
 
