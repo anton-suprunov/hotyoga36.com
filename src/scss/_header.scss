@@ -154,8 +154,10 @@
   @include mq('desktop') {
     position: absolute;
     top: 38px;
-    left: -20px;
-    padding-top: 62px 
+    padding-top: 62px;
+    left: -27px;
+    padding-top: 62px;
+    width: 150px;
   }
 }
 

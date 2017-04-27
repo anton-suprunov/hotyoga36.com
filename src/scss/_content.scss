@@ -1,5 +1,13 @@
 .content {
   padding: 20px 10% 30px;
+  min-height: 600px;
+}
+
+.content__title {
+  font-family: 'Cervo Light';
+  font-size: 30px;
+  margin-top: 0;
+  text-transform: uppercase;
 }
 
 .content__image {

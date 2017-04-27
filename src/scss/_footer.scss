@@ -3,7 +3,7 @@
   height: 120px;
   position: relative;
 
-  @include mq('with-social') {
+  @include mq('desktop-large') {
     //height: 230px;
     height: 360px;
   }
@@ -28,7 +28,7 @@
   top: 15px;
 
   //@include mq('mobileonly') { }
-  @include mq('with-social') {
+  @include mq('desktop-large') {
     top: auto;
     bottom: 30px;
     left: 0;
@@ -43,7 +43,7 @@
 .widgets {
   display: none;
 
-  @include mq('with-social') {
+  @include mq('desktop-large') {
     margin: 0 auto;
     justify-content: space-between;
     padding-top: 18px;
@@ -51,10 +51,7 @@
     display: flex;
     position: absolute;
     left: 50%;
-    margin-left: -425px;
-  }
-  @include mq('desktop-large') {
-    //left: 0;
+    margin-left: -400px;
   }
 }
 
