@@ -973,14 +973,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   position: relative; }
 
 .slideshow__text {
-  color: #fff;
-  text-decoration: none;
-  font-size: 70px;
-  text-transform: uppercase;
-  position: absolute;
-  left: 60%;
-  top: 35%;
-  text-shadow: 1px 1px 2px #444; }
+  display: none; }
+  @media (min-width: 980px) {
+    .slideshow__text {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      position: absolute;
+      left: 60%;
+      top: 35%;
+      text-shadow: 1px 1px 2px #444;
+      font-size: 70px; } }
 
 .slick-dots {
   bottom: 20px; }
