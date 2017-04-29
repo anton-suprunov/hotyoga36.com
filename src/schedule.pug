@@ -3,10 +3,14 @@ extends layouts/main.pug
 block content
     section.content
         h2.content__title РАСПИСАНИЕ
-        //iframe.schedule-iframe(src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=ru&amp;bgcolor=%23FFFFFF&amp;src=hotyoga36%40gmail.com&amp;color=%23060D5E&amp;ctz=Europe%2FMoscow"
-            style="border-width:0l width: 100%;" width="100%" height="600" frameborder="0" scrolling="no")
-
-        //iframe(src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=ru&amp;bgcolor=%23FFFFFF&amp;src=hotyoga36%40gmail.com&amp;color=%23060D5E&amp;ctz=Europe%2FMoscow"
-            style="border-width:0; width:100%; height:600px" height="600" frameborder="0" scrolling="no")
-			
-        iframe(src="https://calendar.google.com/calendar/embed?src=hotyoga36%40gmail.com&ctz=Europe/Moscow&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=ru&amp;bgcolor=%23FFFFFF" style="border: 0; width: 100%; height: 600px;" frameborder="0" scrolling="no")
+        p.content_text. 
+            Друзья, расписание на следующую неделю появится в ближайшие часы. 
+            br    
+            Завтра, в воскресенье: 
+        ul
+            li в 11:00 Hot Streching c Алёной Дорофеевой, 
+            li в 13:00 Bikram Yoga с Игорем Семеновым, 
+            li в 19.30 Йога Нидра с хангом (регистрация по телефону 970 90 36, стоимость участия 500р)
+        br 
+        p.content_text. 
+            Приносим извинения за доставленные неудобство

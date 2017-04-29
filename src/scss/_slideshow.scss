@@ -57,5 +57,7 @@
     &.slick-active {
       background-color: #fff;
     }
+	
+	button:before { content: ""; }
   }
 }
