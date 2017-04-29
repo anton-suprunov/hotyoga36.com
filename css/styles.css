@@ -1025,6 +1025,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     border: 1px solid #fff; }
     .slick-dots li.slick-active {
       background-color: #fff; }
+    .slick-dots li button:before {
+      content: ""; }
 
 .footer {
   background: linear-gradient(to right, #f7901e 0%, #ee3931 25%, #e22c43 50%, #d32757 75%, #ab246c 100%, #7db9e8 100%);
