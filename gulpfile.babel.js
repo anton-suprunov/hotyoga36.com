@@ -39,7 +39,8 @@ const sources = {
     sprite : dirs.src + 'img/sprite/*.png',
     svg : dirs.src + 'img/*.svg',
     fonts : dirs.src + 'fonts/**',
-    assets : dirs.src + 'assets/**'
+    assets : dirs.src + 'assets/**',
+    siteIcons : dirs.src + 'site-icons/**',
 };
 const destinations = {
     css : dirs.dist + 'css',
@@ -198,6 +199,12 @@ gulp.task('assets', function copyAssets() {
         .pipe(reload({stream:true}));
 });
 
+gulp.task('site-icons', function copyAssets() {
+    return gulp.src(sources.siteIcons)
+        .pipe(gulp.dest(dirs.dist))
+        .pipe(reload({stream:true}));
+});
+
 gulp.task('browser-sync', function(done) {
     browserSync({
         server: {
@@ -231,6 +238,6 @@ gulp.task('watch', function watch() {
     gulp.watch([sources.templates, sources.layouts], gulp.series('templates'));
 });
 
-gulp.task('build', gulp.series('clean', 'png-sprite', gulp.parallel('images', 'scss', 'js', 'assets', 'fonts', 'templates')));
+gulp.task('build', gulp.series('clean', 'png-sprite', gulp.parallel('images', 'scss', 'js', 'assets', 'fonts', 'templates', 'site-icons')));
 gulp.task('default', gulp.series('build', 'browser-sync', 'watch'));
 
