@@ -940,7 +940,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     top: 38px;
     padding-top: 62px;
     left: -27px;
-    padding-top: 62px;
     width: 150px; } }
 
 .menu__item {
@@ -967,7 +966,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   display: block;
   padding: 0 15px; }
   .menu__link.menu__link_sub {
-    font-size: 0.95em;
     line-height: 44px; }
     @media (min-width: 980px) {
       .menu__link.menu__link_sub:hover {
@@ -1096,6 +1094,14 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       background-size: auto 50%;
       background-position: 15px 50%; }
 
+.widget__full-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1; }
+
 .content {
   padding: 20px 10% 30px;
   min-height: 600px; }
@@ -1123,5 +1129,32 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .teachers__teacher {
   margin-right: 35px; }
+
+.b-content {
+  display: block; }
+  @media (min-width: 980px) {
+    .b-content {
+      display: none; } }
+  .b-content .b-content-event {
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 0px; }
+    .b-content .b-content-event h1 {
+      font-size: 16px; }
+    .b-content .b-content-event.b-content-event_active .e-description {
+      display: block;
+      font-size: 12px; }
+  .b-content .e-time * {
+    display: none; }
+  .b-content .e-time span:first-child {
+    display: block; }
+  .b-content .e-description,
+  .b-content .e-location {
+    display: none; }
+
+.schedule-iframe {
+  display: none; }
+  @media (min-width: 980px) {
+    .schedule-iframe {
+      display: block; } }
 
 /*# sourceMappingURL=sourcemaps/styles.css.map */
