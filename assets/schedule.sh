@@ -1,0 +1,1 @@
+curl -o schedule-yandex.html https://calendar.yandex.ru/export/html.xml?private_token=073e91671b007918376f4e098f782916cf5c32f3&tz_id=Europe/Moscow&limit=50
