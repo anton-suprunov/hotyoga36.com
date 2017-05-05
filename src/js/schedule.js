@@ -15,18 +15,16 @@ const monthsMap = {
     '11' : 'декабря'
   },
   daysOfWeek = {
-    '0' : 'Понедельник',
-    '1' : 'Вторник',
-    '2' : 'Среда',
-    '3' : 'Четверг',
-    '4' : 'Пятница',
-    '5' : 'Суббота',
-    '6' : 'Воскресенье'
+    '0' : 'Воскресенье',
+    '1' : 'Понедельник',
+    '2' : 'Вторник',
+    '3' : 'Среда',
+    '4' : 'Четверг',
+    '5' : 'Пятница',
+    '6' : 'Суббота'
   };
 
-
-export default function initSchedule() {
-
+function initSchedule() {
   if (!$('.b-content').length) {
     return;
   }
@@ -35,31 +33,29 @@ export default function initSchedule() {
     $(e.currentTarget).toggleClass('b-content-event_active');
   });
 
-    renderSchedule();
-    $(window).resize(renderSchedule);
-    $(window).on('orientationchange', renderSchedule);
-  }
-
-
+  renderSchedule();
+  $(window).resize(renderSchedule);
+  $(window).on('orientationchange', renderSchedule);
 
   $('.e-time span:first-child').each((index, el) => {
-    $(el).parent().html(dateIterator(index, el));
+    //console.log($(el).text(), dateIterator(index, el) );
+    $(el).parent().html( dateIterator(index, el) );
   });
 }
 
 function dateIterator(index, el) {
-  let date = $(el).text(),
+  let date = $(el).html(),
     dateParts = [],
     engDateParts = [],
     engDate,
-    eventDate,
-    dayOfWeek;
+    dayOfWeek,
+    eventDate;
 
   for (let month in monthsMap) {
     if (monthsMap.hasOwnProperty(month)) {
       const rgx = new RegExp(monthsMap[month], 'g');
 
-      date = date.replace(/ /g, ' ');
+      date = date.replace(/&nbsp;/g, ' ');
 
       if (date.match(rgx)) {
         engDate = date.replace(rgx, capitalizeFirstLetter(month));
@@ -72,12 +68,15 @@ function dateIterator(index, el) {
 
   eventDate = new Date(engDateParts[2], engDateParts[1], engDateParts[0]);
   dayOfWeek = daysOfWeek[eventDate.getDay()];
-  console.log(engDateParts, dateParts);
+  //console.log(engDateParts, dateParts);
 
   return dayOfWeek + ', ' + dateParts[3] + '<br>' + dateParts[0] + ' ' + dateParts[1];
 }
 
 function renderSchedule() {
+  if ($('.schedule-iframe').length) {
+    return;
+  }
   var schedule = $('<iframe class="schedule-iframe" src="https://calendar.yandex.ru/week?embed&amp;layer_ids=4383078&amp;tz_id=Europe/Moscow" width="800" height="600" frameborder="0" style="width:100%;"></iframe>');
   if ($(window).outerWidth() > 980 ) {
     schedule.insertBefore('.schedule-mobile');
@@ -87,3 +86,5 @@ function renderSchedule() {
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+export default initSchedule;
