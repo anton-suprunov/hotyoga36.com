@@ -1103,8 +1103,12 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   z-index: 1; }
 
 .content {
-  padding: 20px 10% 30px;
+  padding: 20px 20px 30px;
   min-height: 600px; }
+  @media (min-width: 980px) {
+    .content {
+      padding-left: 10%;
+      padding-right: 10%; } }
 
 .content__title {
   font-family: 'Cervo Light';
