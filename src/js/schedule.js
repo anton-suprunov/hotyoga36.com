@@ -35,9 +35,12 @@ export default function initSchedule() {
     $(e.currentTarget).toggleClass('b-content-event_active');
   });
 
-  if ($(window).outerWidth() > 980 ) {
     renderSchedule();
+    $(window).resize(renderSchedule);
+    $(window).on('orientationchange', renderSchedule);
   }
+
+
 
   $('.e-time span:first-child').each((index, el) => {
     $(el).parent().html(dateIterator(index, el));
@@ -76,7 +79,9 @@ function dateIterator(index, el) {
 
 function renderSchedule() {
   var schedule = $('<iframe class="schedule-iframe" src="https://calendar.yandex.ru/week?embed&amp;layer_ids=4383078&amp;tz_id=Europe/Moscow" width="800" height="600" frameborder="0" style="width:100%;"></iframe>');
-  schedule.insertBefore('.schedule-mobile');
+  if ($(window).outerWidth() > 980 ) {
+    schedule.insertBefore('.schedule-mobile');
+  }
 };
 
 function capitalizeFirstLetter(string) {
