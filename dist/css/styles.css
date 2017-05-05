@@ -649,12 +649,9 @@ body {
   line-height: 1.4; }
 
 .container {
-  margin: 0 2vw;
+  margin: 0 20px;
   position: relative;
   height: 100%; }
-  @media (min-width: 980px) {
-    .container {
-      margin: 0 2vw; } }
 
 /*
 Icon classes can be used entirely standalone. They are named after their original file names.

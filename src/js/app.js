@@ -3,7 +3,7 @@
 //TODO: hide social icons on mobile
 
 import $ from 'jquery';
-import responsiveNav from 'responsive-nav';
+//import responsiveNav from 'responsive-nav';
 import slick from 'slick-carousel';
 
 const init = () => {
@@ -22,6 +22,12 @@ const init = () => {
     fade : true,
     dots : true
   });
+
+  /*$.get(
+    'https://calendar.yandex.ru/export/html.xml?private_token=073e91671b007918376f4e098f782916cf5c32f3&tz_id=Europe/Moscow&limit=30',
+  ).then(function() {
+      console.log(arguments);
+    });*/
 
   $('.nav__toggle').on('click', (e) => {
     $('.menu').toggleClass('menu_active menu_inactive');
