@@ -34,6 +34,14 @@ const init = () => {
   });
   $('.menu').addClass('menu_inactive');
   setTimeout(() => { $('.menu').addClass('menu_loaded'); }, 1000);
+
+  $('.b-content-event').on('click', (e) => {
+    $(e.currentTarget).toggleClass('b-content-event_active');
+  });
+
+  if ($(window).outerWidth() > 980 ) {
+    renderSchedule();
+  }
 };
 
 window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
@@ -52,6 +60,11 @@ function onPlayerStateChange(event) {
     // started
     $('.slideshow').slick('slickPause');
   }
+}
+
+function renderSchedule() {
+  var schedule = $('<iframe class="schedule-iframe" src="https://calendar.yandex.ru/week?embed&amp;layer_ids=4383078&amp;tz_id=Europe/Moscow" width="800" height="600" frameborder="0" style="width:100%;"></iframe>');
+  schedule.insertBefore('.schedule-mobile');
 }
 
 $(init);

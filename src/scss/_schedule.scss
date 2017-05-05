@@ -1,0 +1,39 @@
+.b-content {
+  display: block;
+
+  @include mq('desktop') {
+    display: none;
+  }
+
+  .b-content-event {
+    h1 {
+      font-size: 16px;
+    }
+
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 0px;
+
+    &.b-content-event_active .e-description {
+      display: block;
+      font-size: 12px;
+    }
+  }
+
+  .e-time {
+    * { display:none }
+    span:first-child { display:block }
+  }
+
+  .e-description,
+  .e-location {
+    display: none;
+  }
+}
+
+.schedule-iframe {
+  display: none;
+
+  @include mq('desktop') {
+    display: block;
+  }
+}

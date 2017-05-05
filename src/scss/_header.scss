@@ -156,7 +156,7 @@
     top: 38px;
     padding-top: 62px;
     left: -27px;
-    padding-top: 62px;
+    //padding-top: 62px;
     width: 150px;
   }
 }
@@ -197,7 +197,7 @@
   padding: 0 15px;
   
   &.menu__link_sub {
-    font-size: 0.95em;
+    //font-size: 0.95em;
     line-height: 44px;
 
     @include mq('desktop') {
