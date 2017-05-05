@@ -6,26 +6,39 @@
   }
 
   .b-content-event {
+    padding-top: 40px;
+    position: relative;
     h1 {
       font-size: 16px;
+      margin: 0 0 0;
+      padding: 25px 0 10px;
     }
 
     border-bottom: 1px solid #ececec;
-    padding-bottom: 0px;
+    padding-bottom: 0;
 
     &.b-content-event_active .e-description {
       display: block;
       font-size: 12px;
+      margin: 0 0 15px;
     }
   }
 
   .e-time {
-    * { display:none }
-    span:first-child { display:block }
+    position: absolute;
+    top: 15px;
+    left: 0;
+
+    //* { display:none }
+    //span:first-child { display:block }
   }
 
-  .e-description,
   .e-location {
+    color: rgba(#000, 0.8);
+    margin: 0 0 15px;
+  }
+
+  .e-description {
     display: none;
   }
 }

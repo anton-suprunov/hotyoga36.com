@@ -31,7 +31,8 @@ const dirs = {
 
 const sources = {
     scss : dirs.src + 'scss/**/*.scss',
-    js : dirs.src + 'js/app.js',
+    app : dirs.src + 'js/app.js',
+    js : dirs.src + 'js/**.js',
     html : dirs.src + '*.html',
     templates : dirs.src + '*.pug',
     layouts : dirs.src + 'layouts/**.pug',

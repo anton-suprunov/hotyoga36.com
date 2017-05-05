@@ -939,8 +939,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     position: absolute;
     top: 38px;
     padding-top: 62px;
-    left: -27px;
-    width: 150px; } }
+    left: -1px;
+    width: 200px; } }
 
 .menu__item {
   margin: 0 2%;
@@ -1136,19 +1136,26 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     .b-content {
       display: none; } }
   .b-content .b-content-event {
+    padding-top: 40px;
+    position: relative;
     border-bottom: 1px solid #ececec;
-    padding-bottom: 0px; }
+    padding-bottom: 0; }
     .b-content .b-content-event h1 {
-      font-size: 16px; }
+      font-size: 16px;
+      margin: 0 0 0;
+      padding: 25px 0 10px; }
     .b-content .b-content-event.b-content-event_active .e-description {
       display: block;
-      font-size: 12px; }
-  .b-content .e-time * {
-    display: none; }
-  .b-content .e-time span:first-child {
-    display: block; }
-  .b-content .e-description,
+      font-size: 12px;
+      margin: 0 0 15px; }
+  .b-content .e-time {
+    position: absolute;
+    top: 15px;
+    left: 0; }
   .b-content .e-location {
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0 0 15px; }
+  .b-content .e-description {
     display: none; }
 
 .schedule-iframe {
