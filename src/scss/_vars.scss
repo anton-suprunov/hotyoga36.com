@@ -4,6 +4,7 @@ $color-menu: #fff;
 
 $breakpoints: (
   'mobile':  ( min-width:  320px ),
+  'smallestonly' : (max-width: 420px),
   'mobileonly' : (max-width: 979px),
   //'tablet': ( min-width:  480px ),
   'desktop':  ( min-width: 980px ),

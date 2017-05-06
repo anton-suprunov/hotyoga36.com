@@ -61,44 +61,44 @@ gulp.task('clean', () => {
 
 gulp.task('scss-lint', function scssLint() {
     return gulp.src(sources.scss)
-        .pipe(cache('scsslint'))
-        .pipe(scsslint());
+      .pipe(cache('scsslint'))
+      .pipe(scsslint());
 });
 
 
 gulp.task('scss', function scss() {
     return gulp.src(sources.scss)
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            includePaths : './node_modules/'
-        }).on('error', sass.logError))
-        .pipe(prefix(browserlist))
-        .pipe(sourcemaps.write('sourcemaps'))
-        .pipe(rev())
-        .pipe(gulp.dest(destinations.css))
-        .pipe(rev.manifest('dist/rev-manifest.json', {
+      .pipe(sourcemaps.init())
+      .pipe(sass({
+          includePaths : './node_modules/'
+      }).on('error', sass.logError))
+      .pipe(prefix(browserlist))
+      .pipe(sourcemaps.write('sourcemaps'))
+      .pipe(rev())
+      .pipe(gulp.dest(destinations.css))
+      .pipe(rev.manifest('dist/rev-manifest.json', {
           base: 'dist',
           merge: true
-        }))
-        .pipe(gulp.dest('dist'))
+      }))
+      .pipe(gulp.dest('dist'))
 
         //.pipe(reload({ stream:true }));
-        .pipe(browserSync.stream( {match: '**/*.css' } ));
+      .pipe(browserSync.stream( {match: '**/*.css' } ));
 });
 
 gulp.task('scss:build', function scss() {
     return gulp.src(sources.scss)
-        .pipe(sass({
-            includePaths : './node_modules/'
-        }).on('error', sass.logError))
-        .pipe(prefix(browserlist))
-        .pipe(rev())
-        .pipe(gulp.dest(destinations.css))
-        .pipe(rev.manifest('dist/rev-manifest.json', {
+      .pipe(sass({
+          includePaths : './node_modules/'
+      }).on('error', sass.logError))
+      .pipe(prefix(browserlist))
+      .pipe(rev())
+      .pipe(gulp.dest(destinations.css))
+      .pipe(rev.manifest('dist/rev-manifest.json', {
           base: 'dist',
           merge: true // merge with the existing manifest if one exists
-        }))
-        .pipe(gulp.dest('dist'))
+      }))
+      .pipe(gulp.dest('dist'))
 });
 
 gulp.task('js-webpack', function js(done) {
@@ -109,14 +109,14 @@ gulp.task('js-webpack', function js(done) {
 });
 
 gulp.task('js-rev', function() {
-   return gulp.src(destinations.js + '/app.js')
-        .pipe(rev())
-        .pipe(gulp.dest(destinations.js))
-        .pipe(rev.manifest('dist/rev-manifest.json', {
-            base: 'dist',
-            merge: true
-        }))
-        .pipe(gulp.dest('dist'));
+    return gulp.src(destinations.js + '/app.js')
+      .pipe(rev())
+      .pipe(gulp.dest(destinations.js))
+      .pipe(rev.manifest('dist/rev-manifest.json', {
+          base: 'dist',
+          merge: true
+      }))
+      .pipe(gulp.dest('dist'));
 });
 
 gulp.task('js', gulp.series('js-webpack', 'js-rev', function() {
@@ -125,37 +125,37 @@ gulp.task('js', gulp.series('js-webpack', 'js-rev', function() {
 
 gulp.task('png-sprite', function pngSprite() {
     const spriteData = gulp.src(sources.sprite)
-        .pipe(spritesmith({
-            imgName: '../img/sprite.png',
-            cssName: '_sprite.css',
-            cssFormat : 'css',
-            padding: 2
-        }));
+      .pipe(spritesmith({
+          imgName: '../img/sprite.png',
+          cssName: '_sprite.css',
+          cssFormat : 'css',
+          padding: 2
+      }));
 
     const imgStream = spriteData.img
-        .pipe(buffer())
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))
-        .pipe(gulp.dest(destinations.img));
+      .pipe(buffer())
+      .pipe(imagemin({
+          progressive: true,
+          svgoPlugins: [{removeViewBox: false}],
+          use: [pngquant()]
+      }))
+      .pipe(gulp.dest(destinations.img));
 
     const cssStream = spriteData.css
-        .pipe(gulp.dest(dirs.src + 'scss'));
+      .pipe(gulp.dest(dirs.src + 'scss'));
 
     return merge(imgStream, cssStream);
 });
 
 gulp.task('images', () => {
     return gulp.src(sources.img)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))
-        .pipe(gulp.dest(destinations.img))
-        .pipe(reload({stream:true}));
+      .pipe(imagemin({
+          progressive: true,
+          svgoPlugins: [{removeViewBox: false}],
+          use: [pngquant()]
+      }))
+      .pipe(gulp.dest(destinations.img))
+      .pipe(reload({stream:true}));
 });
 
 
@@ -165,75 +165,75 @@ gulp.task('images', () => {
  */
 gulp.task('svg-sprite',function svgSprite() {
     return gulp.src(sources.svg)
-        .pipe(svgSprite({
-            shape: {
-                spacing: {
-                    padding: 5
-                }
-            },
-            mode: {
-                css: {
-                    // do not create separate css directory
-                    dest: './',
-                    sprite: destinations.svgSprite,
-                    //layout: "diagonal",
-                    //bust: false,
-                    render: {
-                        // this is temporary file, needed for the correct path in the sprite.scss output
-                        // http://stackoverflow.com/questions/29838150/modifying-destination-and-filename-of-gulp-svg-sprite
-                        css : { dest : dirs.dist + 'tmp/sprite.css' },
-                        scss: {
-                            dest: destinations.scssSprite
-                        }
-                    }
-                }
-            },
-        }))
-        .pipe(gulp.dest('.'))
-        .on('end', () => {
-            // remove temporary css file
-            gulp.src(dirs.dist + 'tmp', {read: false})
-                .pipe(clean());
-        });
+      .pipe(svgSprite({
+          shape: {
+              spacing: {
+                  padding: 5
+              }
+          },
+          mode: {
+              css: {
+                  // do not create separate css directory
+                  dest: './',
+                  sprite: destinations.svgSprite,
+                  //layout: "diagonal",
+                  //bust: false,
+                  render: {
+                      // this is temporary file, needed for the correct path in the sprite.scss output
+                      // http://stackoverflow.com/questions/29838150/modifying-destination-and-filename-of-gulp-svg-sprite
+                      css : { dest : dirs.dist + 'tmp/sprite.css' },
+                      scss: {
+                          dest: destinations.scssSprite
+                      }
+                  }
+              }
+          },
+      }))
+      .pipe(gulp.dest('.'))
+      .on('end', () => {
+          // remove temporary css file
+          gulp.src(dirs.dist + 'tmp', {read: false})
+            .pipe(clean());
+      });
 });
 
 gulp.task('svg', function copySvg() {
     return gulp.src(sources.svg)
-        .pipe(gulp.dest(destinations.img))
-        .pipe(reload({stream:true}));
+      .pipe(gulp.dest(destinations.img))
+      .pipe(reload({stream:true}));
 });
 
 gulp.task('html', function copyHtml() {
     return gulp.src(sources.html)
-        .pipe(gulp.dest(dirs.dist))
-        .pipe(reload({stream:true}));
+      .pipe(gulp.dest(dirs.dist))
+      .pipe(reload({stream:true}));
 });
 
 gulp.task('templates', function templates() {
     return gulp.src(sources.templates)
-        .pipe(pug({
+      .pipe(pug({
 
-        }))
-        .pipe(gulp.dest(dirs.dist))
-        .pipe(reload({stream:true}));
+      }))
+      .pipe(gulp.dest(dirs.dist))
+      .pipe(reload({stream:true}));
 });
 
 gulp.task('fonts', function copyFonts() {
     return gulp.src(sources.fonts)
-        .pipe(gulp.dest(destinations.fonts))
-        .pipe(reload({stream:true}));
+      .pipe(gulp.dest(destinations.fonts))
+      .pipe(reload({stream:true}));
 });
 
 gulp.task('assets', function copyAssets() {
     return gulp.src(sources.assets)
-        .pipe(gulp.dest(destinations.assets))
-        .pipe(reload({stream:true}));
+      .pipe(gulp.dest(destinations.assets))
+      .pipe(reload({stream:true}));
 });
 
 gulp.task('site-icons', function copyAssets() {
     return gulp.src(sources.siteIcons)
-        .pipe(gulp.dest(dirs.dist))
-        .pipe(reload({stream:true}));
+      .pipe(gulp.dest(dirs.dist))
+      .pipe(reload({stream:true}));
 });
 
 gulp.task('browser-sync', function(done) {
@@ -246,11 +246,11 @@ gulp.task('browser-sync', function(done) {
 
 gulp.task('eslint', function runEsLint() {
     return gulp.src([sources.js, '!node_modules/**'])
-        .pipe(eslint({
-            fix : true
-        }))
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
+      .pipe(eslint({
+          fix : true
+      }))
+      .pipe(eslint.format())
+      .pipe(eslint.failAfterError());
 });
 
 gulp.task("revreplace", function(){
@@ -258,19 +258,20 @@ gulp.task("revreplace", function(){
 
     return gulp.src(dirs.dist + '/*.html')
       .pipe(revReplace({manifest: manifest}))
-      .pipe(gulp.dest(dirs.dist));
+      .pipe(gulp.dest(dirs.dist))
+      .pipe(reload({ stream:true }));
 });
 
 gulp.task('deploy', function deploy() {
     return gulp.src(dirs.dist + '/**/*')
-        .pipe(deploy());
+      .pipe(deploy());
 });
 
 gulp.task('watch', function watch() {
     gulp.watch(sources.img, gulp.series('images'));
     gulp.watch(sources.sprite, gulp.series('png-sprite'));
-    gulp.watch(sources.scss, gulp.series('scss'));
-    gulp.watch(sources.js, gulp.series('js'));
+    gulp.watch(sources.scss, gulp.series('scss', 'revreplace'));
+    gulp.watch(sources.js, gulp.series('js', 'revreplace'));
     //gulp.watch(sources.html, gulp.series('html'));
     gulp.watch(sources.svg, gulp.series('svg-sprite'));
     gulp.watch(sources.fonts, gulp.series('fonts'));
@@ -278,22 +279,22 @@ gulp.task('watch', function watch() {
 });
 
 gulp.task('build',
-    gulp.series(
-        'clean',
-        'png-sprite',
-        gulp.parallel(
-            'images',
-            gulp.series(
-                'scss',
-                'js',
-                'revreplace'
-            ),
-            'assets',
-            'fonts',
-            'templates',
-            'site-icons'
-        )
+  gulp.series(
+    'clean',
+    'png-sprite',
+    gulp.parallel(
+      'images',
+      gulp.series(
+        'scss',
+        'js',
+        'revreplace'
+      ),
+      'assets',
+      'fonts',
+      'templates',
+      'site-icons'
     )
+  )
 );
 gulp.task('default', gulp.series('build', 'browser-sync', 'watch'));
 
