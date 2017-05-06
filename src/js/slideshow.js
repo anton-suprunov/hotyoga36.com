@@ -18,13 +18,18 @@ function onPlayerStateChange(event) {
     $('.slideshow').slick('slickPause');
   }
 }
-
-export default function initSlideshow() {
+function initSlideshow() {
   const headerHeight = $('.header').outerHeight(),
     footerHeight = $('.footer').outerHeight(),
     windowHeight = $(window).outerHeight(),
   //slideshowHeight = windowHeight - headerHeight - footerHeight;
     slideshowHeight = windowHeight - headerHeight;
+
+  if (!$('.slideshow').length) {
+    return;
+  }
+
+  $.getScript("//www.youtube.com/iframe_api");
 
   $('.slideshow__slide').height(slideshowHeight);
 
@@ -36,3 +41,5 @@ export default function initSlideshow() {
     dots : true
   });
 }
+
+export default initSlideshow;

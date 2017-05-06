@@ -34,8 +34,8 @@ function initSchedule() {
   });
 
   renderSchedule();
-  $(window).resize(renderSchedule);
-  $(window).on('orientationchange', renderSchedule);
+  //$(window).resize(renderSchedule);
+  $(window).on('orientationchange resize', renderSchedule);
 
   $('.e-time span:first-child').each((index, el) => {
     //console.log($(el).text(), dateIterator(index, el) );

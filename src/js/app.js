@@ -7,11 +7,14 @@ import $ from 'jquery';
 import initMenu from './menu';
 import initSlideshow from './slideshow';
 import initSchedule from './schedule';
+import initWidgets from './widgets';
 
 const onDomReady = () => {
   initMenu();
   initSchedule();
   initSlideshow();
+  initWidgets();
 };
+
 
 $(onDomReady);
