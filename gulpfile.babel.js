@@ -20,6 +20,8 @@ import del from 'del';
 import webpack  from 'webpack';
 import babel from 'gulp-babel';
 import path from 'path';
+import rev from 'gulp-rev';
+import revReplace from 'gulp-rev-replace';
 import webpackConfig from './webpack.config';
 
 const browserlist = ['last 2 versions', '> 1%', 'ie 9', 'Firefox ESR'];
@@ -72,7 +74,14 @@ gulp.task('scss', function scss() {
         }).on('error', sass.logError))
         .pipe(prefix(browserlist))
         .pipe(sourcemaps.write('sourcemaps'))
+        .pipe(rev())
         .pipe(gulp.dest(destinations.css))
+        .pipe(rev.manifest('dist/rev-manifest.json', {
+          base: 'dist',
+          merge: true
+        }))
+        .pipe(gulp.dest('dist'))
+
         //.pipe(reload({ stream:true }));
         .pipe(browserSync.stream( {match: '**/*.css' } ));
 });
@@ -83,15 +92,36 @@ gulp.task('scss:build', function scss() {
             includePaths : './node_modules/'
         }).on('error', sass.logError))
         .pipe(prefix(browserlist))
-        .pipe(gulp.dest(destinations.css));
+        .pipe(rev())
+        .pipe(gulp.dest(destinations.css))
+        .pipe(rev.manifest('dist/rev-manifest.json', {
+          base: 'dist',
+          merge: true // merge with the existing manifest if one exists
+        }))
+        .pipe(gulp.dest('dist'))
 });
 
-gulp.task('js', function js(done) {
+gulp.task('js-webpack', function js(done) {
     webpack(webpackConfig, function(err, stats) {
         reload({ stream:true })
         done();
     });
 });
+
+gulp.task('js-rev', function() {
+   return gulp.src(destinations.js + '/app.js')
+        .pipe(rev())
+        .pipe(gulp.dest(destinations.js))
+        .pipe(rev.manifest('dist/rev-manifest.json', {
+            base: 'dist',
+            merge: true
+        }))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('js', gulp.series('js-webpack', 'js-rev', function() {
+    return del(destinations.js + '/app.js');
+}));
 
 gulp.task('png-sprite', function pngSprite() {
     const spriteData = gulp.src(sources.sprite)
@@ -223,6 +253,14 @@ gulp.task('eslint', function runEsLint() {
         .pipe(eslint.failAfterError());
 });
 
+gulp.task("revreplace", function(){
+    var manifest = gulp.src(dirs.dist + '/rev-manifest.json');
+
+    return gulp.src(dirs.dist + '/*.html')
+      .pipe(revReplace({manifest: manifest}))
+      .pipe(gulp.dest(dirs.dist));
+});
+
 gulp.task('deploy', function deploy() {
     return gulp.src(dirs.dist + '/**/*')
         .pipe(deploy());
@@ -239,6 +277,24 @@ gulp.task('watch', function watch() {
     gulp.watch([sources.templates, sources.layouts], gulp.series('templates'));
 });
 
-gulp.task('build', gulp.series('clean', 'png-sprite', gulp.parallel('images', 'scss', 'js', 'assets', 'fonts', 'templates', 'site-icons')));
+gulp.task('build',
+    gulp.series(
+        'clean',
+        'png-sprite',
+        gulp.parallel(
+            'images',
+            gulp.series(
+                'scss',
+                'js',
+                'revreplace'
+            ),
+            'assets',
+            'fonts',
+            'templates',
+            'site-icons'
+        )
+    )
+);
 gulp.task('default', gulp.series('build', 'browser-sync', 'watch'));
+
 

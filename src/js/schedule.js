@@ -25,7 +25,7 @@ const monthsMap = {
   };
 
 function initSchedule() {
-  if (!$('.b-content').length) {
+  if (!$('.schedule-mobile').length) {
     return;
   }
 
@@ -37,10 +37,16 @@ function initSchedule() {
   //$(window).resize(renderSchedule);
   $(window).on('orientationchange resize', renderSchedule);
 
-  $('.e-time span:first-child').each((index, el) => {
-    //console.log($(el).text(), dateIterator(index, el) );
-    $(el).parent().html( dateIterator(index, el) );
-  });
+  loadMobile()
+    .then(function(data) {
+
+      $('.schedule-mobile').html(data);
+
+      $('.e-time span:first-child').each((index, el) => {
+        //console.log($(el).text(), dateIterator(index, el) );
+        $(el).parent().html( dateIterator(index, el) );
+      });
+    });
 }
 
 function dateIterator(index, el) {
@@ -73,10 +79,15 @@ function dateIterator(index, el) {
   return dayOfWeek + ', ' + dateParts[3] + '<br>' + dateParts[0] + ' ' + dateParts[1];
 }
 
+function loadMobile() {
+  return $.get('/schedule-yandex.html');
+}
+
 function renderSchedule() {
   if ($('.schedule-iframe').length) {
     return;
   }
+  console.log($(window).outerWidth());
   var schedule = $('<iframe class="schedule-iframe" src="https://calendar.yandex.ru/week?embed&amp;layer_ids=4383078&amp;tz_id=Europe/Moscow" width="800" height="600" frameborder="0" style="width:100%;"></iframe>');
   if ($(window).outerWidth() > 980 ) {
     schedule.insertBefore('.schedule-mobile');
