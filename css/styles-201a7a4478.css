@@ -673,49 +673,67 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .icon-fb-2x {
   background-image: url(../img/sprite.png);
-  background-position: -256px 0px;
+  background-position: -172px -244px;
   width: 84px;
   height: 80px; }
 
 .icon-fb-3x {
   background-image: url(../img/sprite.png);
-  background-position: 0px -122px;
+  background-position: -256px 0px;
   width: 126px;
   height: 120px; }
 
 .icon-fb, .icons__icon.icons__icon_fb {
   background-image: url(../img/sprite.png);
-  background-position: -260px -244px;
+  background-position: -384px -198px;
   width: 42px;
   height: 40px; }
 
 .icon-instagram-2x {
   background-image: url(../img/sprite.png);
-  background-position: -256px -82px;
+  background-position: 0px -244px;
   width: 84px;
   height: 80px; }
 
 .icon-instagram-3x {
   background-image: url(../img/sprite.png);
-  background-position: -128px 0px;
+  background-position: 0px -122px;
   width: 126px;
   height: 120px; }
 
 .icon-instagram, .icons__icon.icons__icon_instagram {
   background-image: url(../img/sprite.png);
-  background-position: -216px -244px;
+  background-position: -384px -156px;
   width: 42px;
   height: 40px; }
 
 .icon-small-logo, .footer__36 {
   background-image: url(../img/sprite.png);
-  background-position: -256px -164px;
+  background-position: -384px 0px;
   width: 48px;
   height: 70px; }
 
-.icon-vk-2x {
+.icon-telegram-2x {
   background-image: url(../img/sprite.png);
   background-position: -86px -244px;
+  width: 84px;
+  height: 80px; }
+
+.icon-telegram-3x {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 126px;
+  height: 120px; }
+
+.icon-telegram, .icons__icon.icons__icon_telegram {
+  background-image: url(../img/sprite.png);
+  background-position: -384px -72px;
+  width: 42px;
+  height: 40px; }
+
+.icon-vk-2x {
+  background-image: url(../img/sprite.png);
+  background-position: -258px -244px;
   width: 84px;
   height: 80px; }
 
@@ -727,25 +745,25 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .icon-vk, .icons__icon.icons__icon_vk {
   background-image: url(../img/sprite.png);
-  background-position: -172px -244px;
+  background-position: -384px -114px;
   width: 42px;
   height: 40px; }
 
 .icon-youtube-2x {
   background-image: url(../img/sprite.png);
-  background-position: 0px -244px;
+  background-position: -256px -122px;
   width: 84px;
   height: 80px; }
 
 .icon-youtube-3x {
   background-image: url(../img/sprite.png);
-  background-position: 0px 0px;
+  background-position: -128px 0px;
   width: 126px;
   height: 120px; }
 
 .icon-youtube, .icons__icon.icons__icon_youtube {
   background-image: url(../img/sprite.png);
-  background-position: -342px 0px;
+  background-position: -384px -240px;
   width: 42px;
   height: 40px; }
 
@@ -754,14 +772,12 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   right: 0;
   bottom: 15px;
   width: 100px;
+  width: 146px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+      flex-wrap: wrap; }
   @media (min-width: 1276px) {
     .icons {
       bottom: 30px; } }
@@ -774,8 +790,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   text-indent: -999px;
   overflow: hidden;
   margin-top: 10px;
-  opacity: 0.8; }
-  .icons__icon:last-child {
+  opacity: 0.8;
+  margin-right: 10px; }
+  .icons__icon:nth-child(3n) {
     margin-right: 0; }
   .icons__icon:hover {
     opacity: 1; }
@@ -1035,6 +1052,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   left: 0;
   position: absolute;
   top: 25px; }
+  @media (max-width: 420px) {
+    .footer__36 {
+      display: none; } }
 
 .footer__adr {
   margin: 0;
@@ -1046,6 +1066,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     .footer__adr {
       top: auto;
       bottom: 30px;
+      left: 0; } }
+  @media (max-width: 420px) {
+    .footer__adr {
       left: 0; } }
 
 .footer__adr-email {
