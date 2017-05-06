@@ -29,10 +29,6 @@ function initSchedule() {
     return;
   }
 
-  $('.b-content-event').on('click', (e) => {
-    $(e.currentTarget).toggleClass('b-content-event_active');
-  });
-
   renderSchedule();
   //$(window).resize(renderSchedule);
   $(window).on('orientationchange resize', renderSchedule);
@@ -45,6 +41,10 @@ function initSchedule() {
       $('.e-time span:first-child').each((index, el) => {
         //console.log($(el).text(), dateIterator(index, el) );
         $(el).parent().html( dateIterator(index, el) );
+      });
+
+      $('.b-content-event').on('click', (e) => {
+        $(e.currentTarget).toggleClass('b-content-event_active');
       });
     });
 }
