@@ -36,7 +36,7 @@
     opacity: 1;
   }
 
-  &.icons__icon_telegram { @extend .icon-telegram; }
+  &.icons__icon_telegram { @extend .icon-telegram; opacity: 0.7; }
   &.icons__icon_vk { @extend .icon-vk; }
   &.icons__icon_instagram { @extend .icon-instagram; }
   &.icons__icon_fb { @extend .icon-fb; }
