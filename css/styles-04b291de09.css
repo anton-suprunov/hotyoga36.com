@@ -996,6 +996,11 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .slideshow {
   margin-bottom: 0 !important; }
+  .slideshow.slideshow_inline {
+    max-width: 700px;
+    margin: 0 auto 50px !important; }
+    .slideshow.slideshow_inline .slideshow__slide {
+      height: 500px; }
 
 .slideshow__slide {
   background-size: cover;
@@ -1041,6 +1046,27 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       background-color: #fff; }
     .slick-dots li button:before {
       content: ""; }
+
+.slick-prev,
+.slick-next {
+  left: 0;
+  width: 100px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
+  z-index: 1;
+  opacity: 0.3; }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 44px; }
+
+.slick-next {
+  right: 0;
+  left: auto; }
 
 .footer {
   background: linear-gradient(to right, #f7901e 0%, #ee3931 25%, #e22c43 50%, #d32757 75%, #ab246c 100%, #7db9e8 100%);
@@ -1192,5 +1218,3 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   @media (min-width: 980px) {
     .schedule-iframe {
       display: block; } }
-
-/*# sourceMappingURL=sourcemaps/styles.css.map */
