@@ -24,3 +24,23 @@
     margin: 0 auto;
   }
 }
+
+.prices {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+.prices__row {}
+.prices__cell {
+  border-right: 1px solid #ccc;
+  text-align: left;
+  padding: 10px 0 10px 2%;
+  //font-size: 16px;
+   &.prices__cell_th {
+    font-family: 'Cervo Light';
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+   }
+
+   &:last-child { border-right: none; }
+}

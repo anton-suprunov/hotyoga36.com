@@ -1175,6 +1175,22 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       max-width: 700px;
       margin: 0 auto; } }
 
+.prices {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 30px 0; }
+
+.prices__cell {
+  border-right: 1px solid #ccc;
+  text-align: left;
+  padding: 10px 0 10px 2%; }
+  .prices__cell.prices__cell_th {
+    font-family: 'Cervo Light';
+    border-bottom: 1px solid #ccc;
+    font-size: 20px; }
+  .prices__cell:last-child {
+    border-right: none; }
+
 .teachers {
   display: -webkit-box;
   display: -ms-flexbox;
