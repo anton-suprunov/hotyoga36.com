@@ -41,6 +41,7 @@ function initSlideshow() {
   $('.slideshow').each((index, slideshow) => {
     slideshow = $(slideshow);
     let config = Object.assign({}, defaultConfig);
+    //console.log(slideshow.data(), slideshow.data('has-video'));
     if (slideshow.data('hasVideo')) {
       $.getScript("//www.youtube.com/iframe_api");    
     }
@@ -49,9 +50,10 @@ function initSlideshow() {
     }
     if (slideshow.data('arrows')) {
       config.arrows = true;
+      delete config.prevArrow;
+      delete config.nextArrow;
     }
-    delete config.prevArrow;
-    delete config.nextArrow;
+    
     console.log(config);
     slideshow.slick(config);
   });
