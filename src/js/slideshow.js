@@ -9,6 +9,14 @@ window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
   });
 };
 
+const defaultConfig = {
+  prevArrow : null,
+  nextArrow : null,
+  autoplay : true,
+  fade : true,
+  dots : true
+};
+
 function onPlayerStateChange(event) {
   if (event.data === 0 || event.data === 2) {
     // ended or paused
@@ -18,6 +26,7 @@ function onPlayerStateChange(event) {
     $('.slideshow').slick('slickPause');
   }
 }
+
 function initSlideshow() {
   const headerHeight = $('.header').outerHeight(),
     footerHeight = $('.footer').outerHeight(),
@@ -29,16 +38,22 @@ function initSlideshow() {
     return;
   }
 
-  $.getScript("//www.youtube.com/iframe_api");
-
-  $('.slideshow__slide').height(slideshowHeight);
-
-  $('.slideshow').slick({
-    prevArrow : null,
-    nextArrow : null,
-    autoplay : true,
-    fade : true,
-    dots : true
+  $('.slideshow').each((index, slideshow) => {
+    slideshow = $(slideshow);
+    let config = Object.assign({}, defaultConfig);
+    if (slideshow.data('hasVideo')) {
+      $.getScript("//www.youtube.com/iframe_api");    
+    }
+    if (slideshow.data('dynamicHeight')) {
+      $('.slideshow__slide').height(slideshowHeight);    
+    }
+    if (slideshow.data('arrows')) {
+      config.arrows = true;
+    }
+    delete config.prevArrow;
+    delete config.nextArrow;
+    console.log(config);
+    slideshow.slick(config);
   });
 }
 

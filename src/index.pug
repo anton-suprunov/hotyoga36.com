@@ -13,7 +13,7 @@ block content
             a(class="slideshow__slide slideshow__slide_" + index style="background-image:url(" + slide.img + ")")
                 span.slideshow__text!= slide.title
 
-        div.slideshow__slide
+        div.slideshow__slide(data-has-video="true" data-dynamic-height="true")
             //video(id="sampleMovie" width="100%" height="100%" preload controls style="width:100%; height: 100%")
                 source(src="assets/video_2017-04-27_02-48-05.mov")
                 //source src="HTML5Sample_Ogg.ogv"
