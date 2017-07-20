@@ -653,22 +653,6 @@ body {
   position: relative;
   height: 100%; }
 
-.predzapis-bikram {
-  display: none;
-  border: 2px solid #EF462E;
-  border-radius: 4px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  line-height: 20px;
-  height: auto;
-  font-size: 12px;
-  margin-top: 10px;
-  padding: 2px; }
-  @media (min-width: 980px) {
-    .predzapis-bikram {
-      display: block; } }
-
 /*
 Icon classes can be used entirely standalone. They are named after their original file names.
 
@@ -1009,6 +993,20 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     .menu__link {
       line-height: 68px;
       font-size: 18px; } }
+
+@media (min-width: 980px) {
+  .predzapis-bikram {
+    display: block;
+    border: 2px solid #EF462E;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 20px;
+    height: auto;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 2px; } }
 
 .slideshow {
   margin-bottom: 0 !important; }

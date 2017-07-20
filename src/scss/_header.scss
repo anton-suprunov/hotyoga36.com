@@ -210,3 +210,18 @@
   }
 }
 
+.predzapis-bikram {
+  @include mq('desktop') {
+    display: block;
+    border: 2px solid #EF462E;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 20px;
+    height: auto;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+}
