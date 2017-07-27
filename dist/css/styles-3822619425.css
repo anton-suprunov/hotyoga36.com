@@ -964,7 +964,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 .menu__item {
   margin: 0 2%;
   width: auto !important;
-  position: relative; }
+  position: relative;
+  text-align: center; }
   .menu__item.menu__item_sub {
     margin: 0;
     text-indent: 20px; }
@@ -972,10 +973,15 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       .menu__item.menu__item_sub {
         text-indent: 0; } }
   @media (min-width: 980px) {
-    .menu__item:hover .menu.menu_sub {
-      display: block; }
-    .menu__item:hover .menu__link.menu__link_top {
-      background-color: #1a1a1a; } }
+    .menu__item {
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      margin: 0; }
+      .menu__item:hover .menu.menu_sub {
+        display: block; }
+      .menu__item:hover .menu__link.menu__link_top {
+        background-color: #1a1a1a; } }
 
 .menu__link {
   color: #fff;
@@ -996,6 +1002,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 @media (min-width: 980px) {
   .predzapis-bikram {
+    margin-left: 10px;
     display: block;
     border: 2px solid #EF462E;
     border-radius: 4px;

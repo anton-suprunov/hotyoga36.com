@@ -162,6 +162,7 @@
   margin: 0 2%;
   width: auto !important;
   position: relative;
+  text-align: center;
   
   &.menu__item_sub {
     margin: 0;
@@ -173,6 +174,9 @@
   }
   
   @include mq('desktop') {
+    flex-grow: 1;
+    margin: 0;
+
     &:hover {
       .menu.menu_sub {
         display: block;
@@ -212,6 +216,7 @@
 
 .predzapis-bikram {
   @include mq('desktop') {
+    margin-left: 10px;
     display: block;
     border: 2px solid #EF462E;
     border-radius: 4px;
