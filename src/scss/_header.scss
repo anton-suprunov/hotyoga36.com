@@ -167,6 +167,7 @@
   &.menu__item_sub {
     margin: 0;
     text-indent: 20px;
+    text-align: left;
     
     @include mq('desktop') {
       text-indent: 0;
