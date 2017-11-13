@@ -1282,6 +1282,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 .teachers__name {
   font-size: 18px; }
 
+.teachers__teacher__meta {
+  overflow-y: auto; }
+
 .teachers__teacher__desc {
   display: none; }
 
