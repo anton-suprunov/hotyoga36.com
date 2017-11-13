@@ -594,6 +594,18 @@ template {
     -ms-transform: translateY(0);
     transform: translateY(0); } }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 @-webkit-keyframes fadeOutUp {
   0% {
     opacity: 1;
@@ -617,6 +629,46 @@ template {
     -webkit-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px); } }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3); }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05); }
+  70% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9); }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3); }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05); }
+  70% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9); }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
 
 @font-face {
   font-family: 'Cervo Light';
@@ -1177,7 +1229,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .content {
   padding: 20px 20px 30px;
-  min-height: 600px; }
+  min-height: 600px;
+  position: relative; }
   @media (min-width: 980px) {
     .content {
       padding-left: 10%;
@@ -1218,10 +1271,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .teachers__teacher {
-  margin-right: 35px; }
+  cursor: pointer; }
+
+.teachers__name {
+  font-size: 18px; }
+
+.teachers__teacher__desc {
+  display: none; }
 
 .b-content {
   display: block; }
@@ -1256,3 +1318,64 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   @media (min-width: 980px) {
     .schedule-iframe {
       display: block; } }
+
+.popup {
+  position: fixed;
+  top: 86px;
+  bottom: 0;
+  height: 750px;
+  z-index: 999;
+  left: -9999px;
+  right: auto; }
+  .popup.popup_active {
+    left: 10%;
+    right: 10%;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-iteration-count: 1s;
+    animation-iteration-count: 1s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+    .popup.popup_active .popup__bg {
+      display: block; }
+
+.popup__bg {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1; }
+
+.popup__content {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  top: 20px;
+  right: 20px;
+  bottom: 100px;
+  background-color: #fff;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .popup__content .teachers__name {
+    font-size: 24px;
+    margin-top: 0; }
+  .popup__content .teachers__img {
+    margin: 0 25px 25px 0; }
+  .popup__content .teachers__teacher__desc {
+    display: block;
+    font-size: 16px; }
+  .popup__content .teachers__img {
+    max-height: 250px; }

@@ -11,7 +11,9 @@ $slick-loader-path: "../assets/";
 // https://github.com/geoffgraham/animate.scss
 @import  "animatewithsass/_properties";
 @import  "animatewithsass/_fading-entrances/_fadeInDown.scss";
+@import  "animatewithsass/_fading-entrances/_fadeIn.scss";
 @import  "animatewithsass/_fading-exits/_fadeOutUp.scss";
+@import  "animatewithsass/_bouncing-entrances/_bounceIn.scss";
 
 
 @import "vars";
@@ -28,3 +30,4 @@ $slick-loader-path: "../assets/";
 @import "content";
 @import "teachers";
 @import "schedule";
+@import "popup";

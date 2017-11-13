@@ -1,8 +1,18 @@
 .teachers {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .teachers__teacher {
-  margin-right: 35px;
+  //margin-right: 35px;
+  cursor: pointer;
+}
+
+.teachers__name {
+  font-size: 18px
+}
+
+.teachers__teacher__desc {
+  display: none;
 }

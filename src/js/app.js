@@ -8,12 +8,14 @@ import initMenu from './menu';
 import initSlideshow from './slideshow';
 import initSchedule from './schedule';
 import initWidgets from './widgets';
+import initTeachers from './teachers';
 
 const onDomReady = () => {
   initMenu();
   initSchedule();
   initSlideshow();
   initWidgets();
+  initTeachers();
 };
 
 
