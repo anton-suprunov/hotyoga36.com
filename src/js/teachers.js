@@ -9,4 +9,5 @@ export default function initTeachers() {
   $('.popup').on('click', (e) => {
     $('.popup').removeClass('popup_active');
   });
+  
 };
