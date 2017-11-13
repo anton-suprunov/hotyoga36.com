@@ -1278,6 +1278,16 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .teachers__teacher {
   cursor: pointer; }
+  @media (max-width: 979px) {
+    .teachers__teacher {
+      -ms-flex-preferred-size: 48%;
+          flex-basis: 48%; }
+      .teachers__teacher:nth-child(2n+1) {
+        margin-right: 4%; } }
+
+@media (max-width: 979px) {
+  .teachers__img {
+    max-width: 100%; } }
 
 .teachers__name {
   font-size: 18px; }
@@ -1349,6 +1359,12 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     backface-visibility: hidden; }
     .popup.popup_active .popup__bg {
       display: block; }
+  @media (max-width: 979px) {
+    .popup.popup_active {
+      right: 0px;
+      left: 0px;
+      top: 0px;
+      bottom: 0px; } }
 
 .popup__bg {
   display: none;
@@ -1372,13 +1388,21 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  @media (max-width: 979px) {
+    .popup__content {
+      padding: 20px 10px; } }
   .popup__content .teachers__name {
     font-size: 24px;
     margin-top: 0; }
   .popup__content .teachers__img {
     margin: 0 25px 25px 0; }
+    @media (max-width: 979px) {
+      .popup__content .teachers__img {
+        display: none; } }
   .popup__content .teachers__teacher__desc {
     display: block;
     font-size: 16px; }
   .popup__content .teachers__img {
     max-height: 250px; }
+
+/*# sourceMappingURL=sourcemaps/styles.css.map */

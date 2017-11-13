@@ -19,6 +19,15 @@
       display: block;
     }
   }
+
+  @include mq('mobileonly') {
+    &.popup_active {
+      right: 0px;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+    }
+  }
 }
 
 .popup__bg {
@@ -45,6 +54,10 @@
   display: flex;
   //flex-wrap: wrap;
 
+  @include mq('mobileonly') {
+    padding: 20px 10px;
+  }
+
   .teachers__name {
     font-size: 24px;
     margin-top: 0;
@@ -53,6 +66,9 @@
   .teachers__img {
     //float: left;
     margin: 0 25px 25px 0;
+    @include mq('mobileonly') {
+      display: none;
+    }
   }
   .teachers__teacher__desc {
     display: block;
