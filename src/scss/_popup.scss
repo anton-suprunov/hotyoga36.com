@@ -65,6 +65,7 @@
   }
   .teachers__img {
     //float: left;
+    //max-height: 250px;
     margin: 0 25px 25px 0;
     @include mq('mobileonly') {
       display: none;
@@ -75,5 +76,4 @@
     font-size: 16px;
     //flex-basis: 50%
   }
-  .teachers__img { max-height: 250px; }
 }

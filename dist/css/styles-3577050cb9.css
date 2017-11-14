@@ -1402,5 +1402,3 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   .popup__content .teachers__teacher__desc {
     display: block;
     font-size: 16px; }
-  .popup__content .teachers__img {
-    max-height: 250px; }
