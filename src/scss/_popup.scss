@@ -63,13 +63,17 @@
     margin-top: 0;
     //flex-basis: 50%;
   }
+  .teachers__img-wrap { 
+	min-width: 250px; 
+	margin: 0 25px 25px 0;
+	@include mq('mobileonly') {
+      display: none;
+    }
+  }
   .teachers__img {
     //float: left;
     //max-height: 250px;
-    margin: 0 25px 25px 0;
-    @include mq('mobileonly') {
-      display: none;
-    }
+	display: block;
   }
   .teachers__teacher__desc {
     display: block;
