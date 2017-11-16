@@ -1394,11 +1394,14 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   .popup__content .teachers__name {
     font-size: 24px;
     margin-top: 0; }
-  .popup__content .teachers__img {
+  .popup__content .teachers__img-wrap {
+    min-width: 250px;
     margin: 0 25px 25px 0; }
     @media (max-width: 979px) {
-      .popup__content .teachers__img {
+      .popup__content .teachers__img-wrap {
         display: none; } }
+  .popup__content .teachers__img {
+    display: block; }
   .popup__content .teachers__teacher__desc {
     display: block;
     font-size: 16px; }
