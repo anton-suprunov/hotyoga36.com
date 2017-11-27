@@ -1042,7 +1042,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   line-height: 44px;
   font-size: 16px;
   display: block;
-  padding: 0 15px; }
+  padding: 0 15px;
+  text-align: left; }
   .menu__link.menu__link_sub {
     line-height: 44px; }
     @media (min-width: 980px) {
