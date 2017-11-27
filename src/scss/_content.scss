@@ -45,3 +45,16 @@
 
    &:last-child { border-right: none; }
 }
+
+.page-nav {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.page-nav__li {}
+
+.page-nav__link {
+  color: $color-bg-lighter;
+  text-decoration: none;
+  border-bottom: 1px dashed $color-bg-lighter;
+}

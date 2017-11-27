@@ -1266,6 +1266,16 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   .prices__cell:last-child {
     border-right: none; }
 
+.page-nav {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0; }
+
+.page-nav__link {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px dashed #333; }
+
 .teachers {
   display: -webkit-box;
   display: -ms-flexbox;
