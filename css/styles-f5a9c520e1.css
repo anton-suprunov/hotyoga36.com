@@ -1042,17 +1042,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   display: block;
   padding: 0 15px;
   text-align: left; }
-  .menu__link.menu__link_home {
-    background-image: url(../img/home.svg);
-    max-width: 44px;
-    background-repeat: no-repeat;
-    background-size: auto 35px;
-    text-indent: -999px;
-    overflow: hidden;
-    background-position: 50% 50%;
-    padding: 0 10px; }
-    .menu__link.menu__link_home:hover {
-      background-color: transparent !important; }
+  @media (min-width: 980px) {
+    .menu__link.menu__link_home {
+      background-image: url(../img/home.svg);
+      max-width: 44px;
+      background-repeat: no-repeat;
+      background-size: auto 35px;
+      text-indent: -999px;
+      overflow: hidden;
+      background-position: 50% 50%;
+      padding: 0 10px; }
+      .menu__link.menu__link_home:hover {
+        background-color: transparent !important; } }
   .menu__link.menu__link_top:hover {
     background-color: #1a1a1a; }
   .menu__link.menu__link_sub {
