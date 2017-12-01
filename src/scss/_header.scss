@@ -199,6 +199,17 @@
   padding: 0 15px;
   text-align: left;
   
+  &.menu__link_home {
+    background-image: url(../img/home.svg);
+    max-width: 44px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    text-indent: -999px;
+    overflow: hidden;
+    background-position: 50% 50%;
+    padding: 0;
+  }
+
   &.menu__link_sub {
     //font-size: 0.95em;
     line-height: 44px;
@@ -213,6 +224,7 @@
   @include mq('desktop') {
     line-height: 68px;  
     font-size: 18px;
+    text-align: center;
   }
 }
 
