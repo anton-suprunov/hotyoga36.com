@@ -194,16 +194,18 @@
   text-align: left;
   
   &.menu__link_home {
-    background-image: url(../img/home.svg);
-    max-width: 44px;
-    background-repeat: no-repeat;
-    background-size: auto 35px;
-    text-indent: -999px;
-    overflow: hidden;
-    background-position: 50% 50%;
-    padding: 0 10px;
-    &:hover {
-      background-color: transparent !important;
+    @include mq('desktop') {
+      background-image: url(../img/home.svg);
+      max-width: 44px;
+      background-repeat: no-repeat;
+      background-size: auto 35px;
+      text-indent: -999px;
+      overflow: hidden;
+      background-position: 50% 50%;
+      padding: 0 10px;
+      &:hover {
+        background-color: transparent !important;
+      }
     }
   }
 
