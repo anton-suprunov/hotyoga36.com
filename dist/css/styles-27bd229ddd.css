@@ -1311,13 +1311,16 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .teachers__img {
   max-width: 250px;
-  max-height: 250px; }
+  max-height: 250px;
+  display: block;
+  margin: 0 auto; }
   @media (max-width: 979px) {
     .teachers__img {
       max-width: 100%; } }
 
 .teachers__name {
-  font-size: 18px; }
+  font-size: 18px;
+  text-align: center; }
 
 .teachers__teacher__meta {
   overflow-y: auto; }
@@ -1420,7 +1423,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       padding: 20px 10px; } }
   .popup__content .teachers__name {
     font-size: 24px;
-    margin-top: 0; }
+    margin-top: 0;
+    text-align: left; }
   .popup__content .teachers__img-wrap {
     min-width: 250px;
     margin: 0 25px 25px 0; }

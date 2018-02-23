@@ -17,13 +17,17 @@
 .teachers__img {
   max-width: 250px;
   max-height: 250px;
+  display: block;
+  margin: 0 auto;
+
   @include mq('mobileonly') {
     max-width: 100%
   }
 }
 
 .teachers__name {
-  font-size: 18px
+  font-size: 18px;
+  text-align: center
 }
 
 .teachers__teacher__meta {
