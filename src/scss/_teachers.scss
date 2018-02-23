@@ -16,6 +16,8 @@
 }
 
 .teachers__img {
+  max-width: 250px;
+  max-height: 250px;
   @include mq('mobileonly') {
     max-width: 100%
   }
