@@ -1309,9 +1309,12 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       .teachers__teacher:nth-child(2n+1) {
         margin-right: 4%; } }
 
-@media (max-width: 979px) {
-  .teachers__img {
-    max-width: 100%; } }
+.teachers__img {
+  max-width: 250px;
+  max-height: 250px; }
+  @media (max-width: 979px) {
+    .teachers__img {
+      max-width: 100%; } }
 
 .teachers__name {
   font-size: 18px; }
