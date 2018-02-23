@@ -5,7 +5,6 @@
 }
 
 .teachers__teacher {
-  //margin-right: 35px;
   cursor: pointer;
   @include mq('mobileonly') {
     flex-basis: 48%;
