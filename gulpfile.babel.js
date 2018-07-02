@@ -209,7 +209,7 @@ gulp.task('html', function copyHtml() {
 gulp.task('templates', function templates() {
     return gulp.src(sources.templates)
       .pipe(pug({
-
+        pretty: true
       }))
       .pipe(gulp.dest(dirs.dist))
       .pipe(reload({stream:true}));
