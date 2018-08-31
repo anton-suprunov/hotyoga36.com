@@ -1,5 +1,6 @@
 @import "normalize.css/normalize";
 //@import "responsive-nav/responsive-nav";
+@import "lightgallery.js/dist/css/lightgallery.min";
 
 $slick-font-path: "../assets/";
 $slick-loader-path: "../assets/";
@@ -31,3 +32,4 @@ $slick-loader-path: "../assets/";
 @import "teachers";
 @import "schedule";
 @import "popup";
+@import "photos";
