@@ -2252,10 +2252,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+      flex-wrap: wrap; }
 
 .photos__li {
   -ms-flex-preferred-size: 24%;
