@@ -2096,11 +2096,11 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .content__image {
   max-width: 100%;
-  display: block; }
+  display: block;
+  margin: 0 auto; }
   @media (min-width: 980px) {
     .content__image {
-      max-width: 700px;
-      margin: 0 auto; } }
+      max-width: 700px; } }
 
 .prices {
   width: 70%;
