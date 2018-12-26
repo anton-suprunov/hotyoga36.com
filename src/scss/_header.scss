@@ -25,6 +25,7 @@
   background-repeat: no-repeat;
   background-size: 150px auto;
   background-position: 0 15px;
+  z-index: 1;
   
   @include mq('desktop') {
     width: 150px;
@@ -110,9 +111,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  left: -2vw;
+  left: -20px;
   top: 80px;
-  right: -2vw;
+  right: -20px;
   background-color: rgba(0, 0, 0, 0.8);
   
   @include mq('mobileonly') {
@@ -120,6 +121,8 @@
     // hide first running up animation
     max-height: 0;
     overflow: hidden;
+
+    & br { display: none }
     
     &.menu_active {
       //max-height: 400px;
@@ -147,6 +150,8 @@
     position: relative;
     flex-direction: row;
     top: 0;
+    left: 0;
+    right: 0;
   }
   
   // better to move to separate block?

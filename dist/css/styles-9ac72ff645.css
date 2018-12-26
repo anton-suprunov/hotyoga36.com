@@ -1687,7 +1687,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-image: url(../img/logo.png);
   background-repeat: no-repeat;
   background-size: 150px auto;
-  background-position: 0 15px; }
+  background-position: 0 15px;
+  z-index: 1; }
   @media (min-width: 980px) {
     .logo {
       width: 150px;
@@ -1767,15 +1768,17 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   list-style: none;
   margin: 0;
   padding: 0;
-  left: -2vw;
+  left: -20px;
   top: 80px;
-  right: -2vw;
+  right: -20px;
   background-color: rgba(0, 0, 0, 0.8); }
   @media (max-width: 979px) {
     .menu {
       position: absolute;
       max-height: 0;
       overflow: hidden; }
+      .menu br {
+        display: none; }
       .menu.menu_active {
         -webkit-animation-name: fadeInDown;
         animation-name: fadeInDown;
@@ -1818,7 +1821,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row;
-      top: 0; } }
+      top: 0;
+      left: 0;
+      right: 0; } }
   .menu.menu_sub {
     position: relative;
     left: 0;
