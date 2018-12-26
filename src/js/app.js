@@ -29,6 +29,12 @@ const onDomReady = () => {
   initWidgets();
   initTeachers();
   initGallery();
+
+  $('.dropdown-text__toggle').on('click', (e) => {
+    e.preventDefault();
+    let textEl = document.querySelector('#hidden-text');
+    textEl.style.display =  (textEl.style.display === 'block' ? 'none' : 'block');
+  });
 };
 
 

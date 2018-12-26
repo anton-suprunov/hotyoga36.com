@@ -5,7 +5,11 @@
   z-index: 1;
   
   @include mq('desktop') {
-    height: 132px;  
+    height: 100px;
+  }
+
+  @include mq('desktop-large') { 
+    height: 132px;
   }
 }
 
@@ -23,9 +27,16 @@
   background-position: 0 15px;
   
   @include mq('desktop') {
+    width: 150px;
+    background-size: 150px auto;
+    top: 10px;
+  }
+
+  @include mq('desktop-large') {
     background-position: 0 29px;
     width: 245px;
     background-size: 245px 62px;
+    top: 0;
   }
 }
 
@@ -37,10 +48,16 @@
   bottom: 0;
     
   @include mq('desktop') {
+    min-width: 80%;
+    margin-left: 20%;
+    padding-top: 16px;
+  }
+
+  @include mq('desktop-large') {
     position: relative;
     padding-top: 32px;
-    min-width: 70%;  
-    margin-left: 30%;
+    min-width: 75%;
+    margin-left: 25%;
   }
 }
 
@@ -209,6 +226,10 @@
     }
   }
 
+  &.menu__link_converse {
+    line-height: 34px;
+  }
+
   &.menu__link_top:hover {
     background-color: lighten($color-bg-dark, 10%);
   }
@@ -228,6 +249,11 @@
     line-height: 68px;  
     font-size: 18px;
     text-align: center;
+  }
+
+  @include mq('980<x<1200') {
+    font-size: 14px;
+    padding: 0 10px;
   }
 }
 

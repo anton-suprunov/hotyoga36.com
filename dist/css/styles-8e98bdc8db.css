@@ -1512,6 +1512,12 @@ body {
   position: relative;
   height: 100%; }
 
+.content__wrapper_border {
+  border: 2px solid #000;
+  padding: 10px;
+  margin-bottom: 40px;
+  margin-top: 40px; }
+
 /*
 Icon classes can be used entirely standalone. They are named after their original file names.
 
@@ -1665,6 +1671,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   z-index: 1; }
   @media (min-width: 980px) {
     .header {
+      height: 100px; } }
+  @media (min-width: 1200px) {
+    .header {
       height: 132px; } }
 
 .logo {
@@ -1681,9 +1690,15 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: 0 15px; }
   @media (min-width: 980px) {
     .logo {
+      width: 150px;
+      background-size: 150px auto;
+      top: 10px; } }
+  @media (min-width: 1200px) {
+    .logo {
       background-position: 0 29px;
       width: 245px;
-      background-size: 245px 62px; } }
+      background-size: 245px 62px;
+      top: 0; } }
 
 .nav {
   position: absolute;
@@ -1693,10 +1708,15 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   bottom: 0; }
   @media (min-width: 980px) {
     .nav {
+      min-width: 80%;
+      margin-left: 20%;
+      padding-top: 16px; } }
+  @media (min-width: 1200px) {
+    .nav {
       position: relative;
       padding-top: 32px;
-      min-width: 70%;
-      margin-left: 30%; } }
+      min-width: 75%;
+      margin-left: 25%; } }
 
 .nav__toggle span, .nav__toggle span:before, .nav__toggle span:after {
   width: 25px;
@@ -1861,6 +1881,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       padding: 0 10px; }
       .menu__link.menu__link_home:hover {
         background-color: transparent !important; } }
+  .menu__link.menu__link_converse {
+    line-height: 34px; }
   .menu__link.menu__link_top:hover {
     background-color: #1a1a1a; }
   .menu__link.menu__link_sub {
@@ -2271,3 +2293,38 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   .photos__li img {
     display: block;
     max-width: 100%; }
+
+.btn-of-order {
+  display: inline-block;
+  width: 140px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  vertical-align: top;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  word-wrap: break-word;
+  border: 2px solid #000;
+  margin: 0 auto;
+  display: block; }
+
+.dropdown-text {
+  list-style: none;
+  margin: 10px 0 40px;
+  padding: 0; }
+
+.dropdown-text__toggle {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.75); }
+  .dropdown-text__toggle:hover {
+    color: rgba(0, 0, 0, 0.7); }
+
+.dropdown-text__list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: none; }
