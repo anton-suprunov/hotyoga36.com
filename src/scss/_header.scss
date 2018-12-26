@@ -246,14 +246,14 @@
   }
   
   @include mq('desktop') {
-    line-height: 68px;  
-    font-size: 18px;
+    line-height: 68px;
+    font-size: 14px;
+    padding: 0 10px;
     text-align: center;
   }
 
-  @include mq('980<x<1200') {
-    font-size: 14px;
-    padding: 0 10px;
+  @include mq('desktop-large') {
+    font-size: 18px;
   }
 }
 
