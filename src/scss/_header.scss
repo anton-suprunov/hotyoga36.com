@@ -218,6 +218,7 @@
   display: block;
   padding: 0 15px;
   text-align: left;
+  cursor: pointer;
   
   &.menu__link_home {
     @include mq('desktop') {
