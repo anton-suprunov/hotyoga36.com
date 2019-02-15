@@ -173,10 +173,14 @@
 .menu__dropdown {
   @include mq('desktop') {
     position: absolute;
-    top: 55px;
+    top: 39px;
     padding-top: 45px;
     left: -1px;
     width: 200px;
+  }
+
+  @include mq('desktop-large') {
+    top: 55px;
   }
 }
 

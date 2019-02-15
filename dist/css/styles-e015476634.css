@@ -1840,10 +1840,14 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 @media (min-width: 980px) {
   .menu__dropdown {
     position: absolute;
-    top: 55px;
+    top: 39px;
     padding-top: 45px;
     left: -1px;
     width: 200px; } }
+
+@media (min-width: 1200px) {
+  .menu__dropdown {
+    top: 55px; } }
 
 .menu__item {
   margin: 0 2%;
@@ -2129,6 +2133,40 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   color: #333;
   text-decoration: none;
   border-bottom: 1px dashed #333; }
+
+.content__list {
+  padding: 0;
+  margin: 0; }
+
+.content__li {
+  margin-top: 10px; }
+  .content__li_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+.student-name {
+  min-width: 180px; }
+
+.inline-icon {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 20px;
+  height: 20px;
+  display: block;
+  text-decoration: none;
+  text-indent: -999px;
+  overflow: hidden;
+  margin-left: 20px; }
+  .inline-icon_vk {
+    background-image: url("../img/vk-bw-logo.svg"); }
+  .inline-icon_fb {
+    background-image: url("../img/fb-bw-logo.svg"); }
+  .inline-icon_inst {
+    background-image: url("../img/ig-bw-logo.svg"); }
 
 .teachers {
   display: -webkit-box;
