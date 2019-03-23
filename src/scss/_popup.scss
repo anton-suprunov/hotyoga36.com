@@ -52,7 +52,6 @@
   //box-shadow: 2px 2px 10px #ccc;
   padding: 50px;
   display: flex;
-  //flex-wrap: wrap;
 
   @include mq('mobileonly') {
     padding: 20px 10px;
@@ -62,20 +61,21 @@
     font-size: 24px;
     margin-top: 0;
     text-align: left;
-    //flex-basis: 50%;
   }
+  
   .teachers__img-wrap { 
-	min-width: 250px; 
-	margin: 0 25px 25px 0;
-	@include mq('mobileonly') {
+    min-width: 250px; 
+    margin: 0 25px 25px 0;
+    @include mq('mobileonly') {
       display: none;
     }
   }
+  
   .teachers__img {
-    //float: left;
-    //max-height: 250px;
-	display: block;
+    max-width: 250px;
+	  display: block;
   }
+
   .teachers__teacher__desc {
     display: block;
     font-size: 16px;

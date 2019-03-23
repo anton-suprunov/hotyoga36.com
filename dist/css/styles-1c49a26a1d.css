@@ -2180,17 +2180,23 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
           justify-content: space-between; }
 
 .teachers__teacher {
-  cursor: pointer; }
+  cursor: pointer;
+  width: 20%;
+  max-width: 20%; }
   @media (max-width: 979px) {
     .teachers__teacher {
       -ms-flex-preferred-size: 48%;
-          flex-basis: 48%; }
+          flex-basis: 48%;
+      width: 48%;
+      max-width: 48%; }
       .teachers__teacher:nth-child(2n+1) {
         margin-right: 4%; } }
 
+.teachers__img-wrap {
+  padding: 0 10px; }
+
 .teachers__img {
-  max-width: 250px;
-  max-height: 250px;
+  width: 100%;
   display: block;
   margin: 0 auto; }
   @media (max-width: 979px) {
@@ -2311,6 +2317,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       .popup__content .teachers__img-wrap {
         display: none; } }
   .popup__content .teachers__img {
+    max-width: 250px;
     display: block; }
   .popup__content .teachers__teacher__desc {
     display: block;

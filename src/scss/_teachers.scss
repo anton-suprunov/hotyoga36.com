@@ -6,22 +6,33 @@
 
 .teachers__teacher {
   cursor: pointer;
+  width: 20%;
+  max-width: 20%;
+
   @include mq('mobileonly') {
     flex-basis: 48%;
+    width: 48%;
+    max-width: 48%;
     &:nth-child(2n+1) {
       margin-right: 4%;
     }
   }
 }
 
+.teachers__img-wrap {
+  padding: 0 10px;
+}
+
 .teachers__img {
-  max-width: 250px;
-  max-height: 250px;
+  //max-width: 250px;
+  //max-height: 250px;
+  width: 100%;
   display: block;
   margin: 0 auto;
 
   @include mq('mobileonly') {
-    max-width: 100%
+    max-width: 100%;
+    //width: auto;
   }
 }
 
