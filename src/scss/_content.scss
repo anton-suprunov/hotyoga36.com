@@ -9,6 +9,16 @@
   }
 }
 
+.content__columns {
+  display: flex;  
+}
+
+.content__column {
+  flex-basis: 50%;
+  padding-right: 50px;
+  &:last-child { padding-right: 0; }
+}
+
 .content__title {
   font-family: 'Cervo Light';
   font-size: 30px;

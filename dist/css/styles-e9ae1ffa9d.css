@@ -2095,6 +2095,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       padding-left: 10%;
       padding-right: 10%; } }
 
+.content__columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.content__column {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding-right: 50px; }
+  .content__column:last-child {
+    padding-right: 0; }
+
 .content__title {
   font-family: 'Cervo Light';
   font-size: 30px;
