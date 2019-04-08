@@ -2098,14 +2098,22 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 .content__columns {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
-.content__column {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  padding-right: 50px; }
-  .content__column:last-child {
-    padding-right: 0; }
+@media (min-width: 980px) {
+  .content__column {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    padding-right: 50px; }
+    .content__column:last-child {
+      padding-right: 0; } }
+
+@media (max-width: 979px) {
+  .content__column {
+    min-width: 100%;
+    margin-bottom: 30px; } }
 
 .content__title {
   font-family: 'Cervo Light';

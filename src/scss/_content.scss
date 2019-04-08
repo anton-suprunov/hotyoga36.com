@@ -11,12 +11,23 @@
 
 .content__columns {
   display: flex;  
+  flex-wrap: wrap;
 }
 
 .content__column {
-  flex-basis: 50%;
-  padding-right: 50px;
-  &:last-child { padding-right: 0; }
+  @include mq('desktop') {
+    flex-basis: 50%;
+    padding-right: 50px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  @include mq('mobileonly') {
+    min-width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 .content__title {
