@@ -177,10 +177,25 @@
     padding-top: 45px;
     left: -1px;
     width: 200px;
+
+    &_level2 {
+      left: 200px;
+      top: -45px;
+    }
+  }
+
+  @include mq('mobileonly') {
+    &_level2 {
+      padding-left: 15px
+    }
   }
 
   @include mq('desktop-large') {
     top: 55px;
+    &_level2 {
+      width: 250px;
+      top: -45px;
+    }
   }
 }
 
@@ -204,7 +219,7 @@
     flex-grow: 1;
     margin: 0;
 
-    &:hover .menu.menu_sub {
+    &:hover > .menu__dropdown > .menu.menu_sub {
       display: block;
     }
   } 

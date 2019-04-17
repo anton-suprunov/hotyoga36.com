@@ -1843,11 +1843,21 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     top: 39px;
     padding-top: 45px;
     left: -1px;
-    width: 200px; } }
+    width: 200px; }
+    .menu__dropdown_level2 {
+      left: 200px;
+      top: -45px; } }
+
+@media (max-width: 979px) {
+  .menu__dropdown_level2 {
+    padding-left: 15px; } }
 
 @media (min-width: 1200px) {
   .menu__dropdown {
-    top: 55px; } }
+    top: 55px; }
+    .menu__dropdown_level2 {
+      width: 250px;
+      top: -45px; } }
 
 .menu__item {
   margin: 0 2%;
@@ -1867,7 +1877,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
           -ms-flex-positive: 1;
               flex-grow: 1;
       margin: 0; }
-      .menu__item:hover .menu.menu_sub {
+      .menu__item:hover > .menu__dropdown > .menu.menu_sub {
         display: block; } }
 
 .menu__link {
@@ -2119,6 +2129,22 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   font-family: 'Cervo Light';
   font-size: 30px;
   margin-top: 0;
+  text-transform: uppercase; }
+
+.content__text_first {
+  margin-top: 0; }
+
+.content__subtitle {
+  font-family: 'Cervo Light';
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0px;
+  text-transform: uppercase; }
+
+.content__subtitle2 {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   text-transform: uppercase; }
 
 .content__image {

@@ -37,6 +37,25 @@
   text-transform: uppercase;
 }
 
+.content__text {
+  &_first { margin-top: 0; }
+}
+
+.content__subtitle {
+  font-family: 'Cervo Light';
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.content__subtitle2 {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
 .content__image {
   max-width: 100%;
   display: block;
@@ -81,7 +100,6 @@
 }
 
 .content__list {
-  //list-style: none;
   padding: 0;
   margin: 0;
 }
