@@ -8,7 +8,8 @@
     "start": "gulp",
     "prod": "gulp build --production",
     "eslint:fix": "eslint/bin/eslint.js --fix app/**/*.js",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run prod && git add -A && git commit -m 'changes' && git push origin master && dploy",
+    "deploy-pages": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
