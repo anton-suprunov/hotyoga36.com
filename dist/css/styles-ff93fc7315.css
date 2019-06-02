@@ -2151,6 +2151,23 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     .schedule-iframe {
       display: block; } }
 
+.schedule-tabs {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px; }
+
+.schedule-tab {
+  border: 1px solid #ececec;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px 15px;
+  color: #444;
+  text-decoration: none; }
+  .schedule-tab_active {
+    opacity: 1; }
+  .schedule-tab:last-child {
+    border-left: none; }
+
 .popup {
   position: fixed;
   top: 86px;

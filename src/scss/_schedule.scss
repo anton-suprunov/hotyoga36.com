@@ -45,8 +45,32 @@
 
 .schedule-iframe {
   display: none;
+  //border: 1px solid #ececec;
 
   @include mq('desktop') {
     display: block;
+  }
+}
+
+.schedule-tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.schedule-tab {
+  border: 1px solid #ececec;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px 15px;
+  //opacity: .5;
+  color: #444;
+  text-decoration: none;
+
+  &_active {
+    opacity: 1;
+  }
+
+  &:last-child {
+    border-left: none;
   }
 }

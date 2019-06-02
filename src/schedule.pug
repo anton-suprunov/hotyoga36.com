@@ -4,9 +4,7 @@ block content
     section.content
         h2.content__title РАСПИСАНИЕ
 
-        //iframe(src="https://calendar.yandex.ru/week?embed&layer_ids=4383078&tz_id=Europe/Moscow" width="800" height="450" frameborder="0" style="border: 1px solid #eee")
-        //iframe.schedule-iframe(src="https://calendar.yandex.ru/week?embed&layer_ids=4383078&tz_id=Europe/Moscow" width="800" height="600" frameborder="0" style="width:100%")
-        //iframe(src="https://calendar.yandex.ru/export/html.xml?private_token=073e91671b007918376f4e098f782916cf5c32f3&tz_id=Europe/Moscow&limit=30" style="width:100%; height: 600px;")
-
+        div.schedule-tabs
+            a.schedule-tab.schedule-tab_active#schedule-tab-rubik(href="#rubinsteina") Рубинштейна
+            a.schedule-tab#schedule-tab-vo(href="#vo") Васильевский остров
         div.schedule-mobile
-            //include schedule-yandex.html

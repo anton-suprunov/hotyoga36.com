@@ -30,8 +30,21 @@ function initSchedule() {
   }
 
   renderSchedule();
-  //$(window).resize(renderSchedule);
+  
   $(window).on('orientationchange resize', renderSchedule);
+
+  /*$('#schedule-tab-rubik').on('click', () => {
+    if ($('#schedule-tab-rubik').hasClass('schedule-tab_active')) return;
+    $('.schedule-iframe_1').scr();
+    $('.schedule-iframe_2').hide();
+    $('#schedule-tab-rubik, #schedule-tab-vo').toggleClass('schedule-tab_active');
+  });
+  $('#schedule-tab-vo').on('click', () => {
+    if ($('#schedule-tab-vo').hasClass('schedule-tab_active')) return;
+    $('.schedule-iframe_1').hide();
+    $('.schedule-iframe_2').show();
+    $('#schedule-tab-rubik, #schedule-tab-vo').toggleClass('schedule-tab_active');
+  });*/
 
   loadMobile()
     .then(function(data) {
@@ -87,8 +100,12 @@ function renderSchedule() {
   if ($('.schedule-iframe').length) {
     return;
   }
-  console.log($(window).outerWidth());
-  var schedule = $('<iframe class="schedule-iframe" src="https://calendar.yandex.ru/week?embed&amp;layer_ids=4383078&amp;tz_id=Europe/Moscow" width="800" height="600" frameborder="0" style="width:100%;"></iframe>');
+  
+  var schedule = $('<div class="schedules">' +
+    '<iframe id="rubinsteina" class="schedule-iframe schedule-iframe_1" src="https://calendar.yandex.ru/week?embed&amp;layer_ids=4383078&amp;tz_id=Europe/Moscow" width="800" height="600" frameborder="0" style="width:100%;"></iframe>' +
+    '<iframe id="vo" class="schedule-iframe schedule-iframe_2" src="https://calendar.yandex.ru/week?embed&amp;layer_ids=7386910&amp;tz_id=Europe/Moscow" width="800" height="600" frameborder="0" style="width:100%;"></iframe>' +
+  '</div>');
+
   if ($(window).outerWidth() > 980 ) {
     schedule.insertBefore('.schedule-mobile');
   }
