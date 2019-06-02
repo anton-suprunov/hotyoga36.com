@@ -1,9 +1,11 @@
-.b-content {
-  display: block;
-
+.schedule-mobile {
   @include mq('desktop') {
     display: none;
   }
+}
+
+.b-content {
+  display: block;
 
   .b-content-event {
     padding-top: 40px;
