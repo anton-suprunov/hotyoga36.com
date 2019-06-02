@@ -2166,6 +2166,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   text-decoration: none; }
   .schedule-tab_active {
     opacity: 1; }
+  .schedule-tab#schedule-tab-rubik {
+    background-color: #f8e1ec; }
+  .schedule-tab#schedule-tab-vo {
+    background-color: #fcdfc8; }
   .schedule-tab:last-child {
     border-left: none; }
 
