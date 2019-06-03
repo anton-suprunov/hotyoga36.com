@@ -2173,6 +2173,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   .schedule-tab:last-child {
     border-left: none; }
 
+.schedule-mobile-title {
+  font-size: 18px;
+  margin: 0 0 10px; }
+
 .popup {
   position: fixed;
   top: 86px;
