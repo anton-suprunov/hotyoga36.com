@@ -50,6 +50,7 @@ const sources = {
     assets : dirs.src + 'assets/**',
     siteIcons : dirs.src + 'site-icons/**',
 };
+
 const destinations = {
     css : dirs.dist + 'css',
     js : dirs.dist + 'js',

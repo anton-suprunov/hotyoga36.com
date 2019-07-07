@@ -175,7 +175,7 @@
     position: absolute;
     top: 39px;
     padding-top: 45px;
-    left: -1px;
+    left: -50px;
     width: 200px;
 
     &_level2 {
@@ -236,6 +236,7 @@
   cursor: pointer;
   
   &.menu__link_home {
+
     @include mq('desktop') {
       background-image: url(../img/home.svg);
       max-width: 44px;
@@ -245,6 +246,7 @@
       overflow: hidden;
       background-position: 50% 50%;
       padding: 0 10px;
+
       &:hover {
         background-color: transparent !important;
       }
@@ -273,7 +275,7 @@
   @include mq('desktop') {
     line-height: 68px;
     font-size: 14px;
-    padding: 0 10px;
+    padding: 0 6px;
     text-align: center;
   }
 

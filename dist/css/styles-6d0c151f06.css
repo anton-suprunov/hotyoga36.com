@@ -1710,7 +1710,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     position: absolute;
     top: 39px;
     padding-top: 45px;
-    left: -1px;
+    left: -50px;
     width: 200px; }
     .menu__dropdown_level2 {
       left: 200px;
@@ -1781,7 +1781,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     .menu__link {
       line-height: 68px;
       font-size: 14px;
-      padding: 0 10px;
+      padding: 0 6px;
       text-align: center; } }
   @media (min-width: 1200px) {
     .menu__link {
