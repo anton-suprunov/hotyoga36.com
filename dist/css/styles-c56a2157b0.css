@@ -2020,8 +2020,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 .prices {
   width: 70%;
   border-collapse: collapse;
-  margin: 10px 0 30px 0;
-  table-layout: fixed; }
+  margin: 10px 0 30px 0; }
+  @media (min-width: 980px) {
+    .prices {
+      table-layout: fixed; } }
 
 .prices__cell {
   border-right: 1px solid #ccc;
