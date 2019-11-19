@@ -3,6 +3,7 @@
   //height: 120px;
   height: 195px;
   position: relative;
+  top: -5px;
 
   @include mq('desktop-large') {
     height: 360px;
