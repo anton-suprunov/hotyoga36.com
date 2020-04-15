@@ -38,12 +38,26 @@
 
 .teachers__name {
   font-size: 18px;
-  text-align: center
+  text-align: center;
+
+  &.teachers__name_hide {
+    text-indent: -999px;
+    overflow: hidden;
+    margin: 0;
+
+    small { display: none; }
+  }
+}
+
+.teachers__teacher-text-title {
+  display: block;
+  font-size: 18px;
 }
 
 .teachers__teacher__meta {
   overflow-y: auto;
 }
+
 .teachers__teacher__desc {
   display: none;
 }
