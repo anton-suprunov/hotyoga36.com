@@ -2,12 +2,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  &_left { justify-content: flex-start; }
+  
 }
 
 .teachers__teacher {
   cursor: pointer;
   width: 20%;
   max-width: 20%;
+
+  &[href] {
+    text-decoration: none;
+    color: #000;
+  }
 
   @include mq('mobileonly') {
     flex-basis: 48%;
@@ -46,6 +54,11 @@
     margin: 0;
 
     small { display: none; }
+  }
+
+  span {
+    display: block;
+    font-size: .8em
   }
 }
 
