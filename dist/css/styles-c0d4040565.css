@@ -2086,11 +2086,23 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
       flex-wrap: wrap;
   -ms-flex-pack: justify;
       justify-content: space-between; }
+  .teachers_left {
+    -ms-flex-pack: start;
+        justify-content: flex-start; }
+  .teachers_center {
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .teachers_big .teachers__teacher {
+    width: 25%;
+    max-width: 25%; }
 
 .teachers__teacher {
   cursor: pointer;
   width: 20%;
   max-width: 20%; }
+  .teachers__teacher[href] {
+    text-decoration: none;
+    color: #000; }
   @media (max-width: 979px) {
     .teachers__teacher {
       -ms-flex-preferred-size: 48%;
@@ -2120,6 +2132,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     margin: 0; }
     .teachers__name.teachers__name_hide small {
       display: none; }
+  .teachers__name span {
+    display: block;
+    font-size: .8em; }
 
 .teachers__teacher-text-title {
   display: block;
@@ -2130,6 +2145,20 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .teachers__teacher__desc {
   display: none; }
+
+span.teachers__text_short:after {
+  content: "...далее";
+  margin-left: 4px;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: underline; }
+
+span.teachers__text_short.teachers__text_hide {
+  display: none; }
+
+span.teachers__text_long {
+  display: none; }
+  span.teachers__text_long.teachers__text_visible {
+    display: block; }
 
 @media (min-width: 980px) {
   .schedule-mobile {

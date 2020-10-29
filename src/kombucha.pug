@@ -1,0 +1,49 @@
+extends layouts/main.pug
+
+block content
+    section.content
+        .content__wrapper
+            img.content__image(src="assets/converse-header.png")
+            h4.content__subtitle О коллаборации
+            p.content__text.
+              Компании FAB Store, Converse и Hot Yoga 36 – до недавнего момента связывали только две вещи: любовь к рок-н-роллу и то, что каждый является лидером в своём сегменте.
+              <br />
+              Сегодня мы представляем вам первую коллаборацию HOT Converse by FAB Store, состоящую из нескольких уникальных дизайнов культовых кед All Star на тему бунтарства и йоги.
+            
+            p.context__text.
+              FAB Store - крупнейший в Петербурге магазин, включающий несколько абсолютно разных отделов легендарной обуви и одежды, эксклюзивное представительство многих популярных западных брендов. Постепенно захватив весь Банковский переулок  в центре Санкт-Петербурга FAB Store является официальным дилером Converse, Dr.Martens, TUK, Vans, Red Wing, Wolverine, New Balance и ASICS.
+
+            p.contet__text.
+              Converse — американская компания, производящая обувь с начала XX века и наиболее известная своими кедами Chuck Taylor All-Star. Контролируется компанией Nike. Наибольшую известность приобрела благодаря известным артистам и деятелям искусства в разных странах.
+
+            .dropdown-text
+              a.dropdown-text__toggle(href="#") Подробнее
+              
+              ul.dropdown-text__list#hidden-text
+                li Курт Кобейн часто носил кеды фирмы Converse и благодаря этому кеды этой фирмы стали неотъемлемой частью стиля "гранж".
+                li Актёр Теннант, Дэвид, сыгравший Десятого Доктора (2005—2010 г.) в научно-фантастическом телесериале «Доктор Кто» ходит в высоких кедах Converse
+                li В 1995 году фильм Ice Cream Man («Мороженщик») частично спонсировался компанией Converse. Многие герои носили их кеды, в большинстве случаев это были Chuck Taylor All-Stars. В ходе фильма можно увидеть огромное количество планов этих кед.
+                li В фильме «Рокки», актёр Сильвестр Сталлоне в роли боксёра Рокки Бальбоа совершал утреннюю пробежку в Chuck Taylor All-Star.
+                li В фильме "Я робот» Уилл Смит ходил в Converse весь фильм.
+                li Всем известный Доктор Хаус в одноимённом сериале, очень часто появлялся в кадре в кедах фирмы Converse.
+                li Леонард Хофстедтер из популярного ситкома «Теория большого взрыва» носил Converse.
+            
+            section(class="slideshow slideshow_inline slideshow_converse" data-arrows="true")
+              a(class="slideshow__slide" style="background-image:url(assets/converse-white-1.jpg)")
+              a(class="slideshow__slide" style="background-image:url(assets/converse-white-2.jpg)")
+              a(class="slideshow__slide" style="background-image:url(assets/converse-white-3.jpg)")
+
+            <a class="btn-of-order" href="https://fabstore.ru/catalog/iteminfo/fab-lab-x-hot-yoga-cream" target="_blank">Купить кеды</a>
+
+        .content__wrapper.content__wrapper_border
+            h4.content__subtitle О кедах
+            p.content__text.
+              Культовые кеды Chuck Taylor All Star High Top с классическим силуэтом и знаменитой эмблемой в виде звезды на щиколотке — это дань уважения наследию рок-н-ролла.  Легкая холщовая ткань и плоские шнурки — символы фирменного дизайна. Классическая модель All-Star впервые была выпущена в 1917 году и остается неизменной уже десятилетия. Круглая нашивка, лаконичная форма, сочетание ткани и резины – ничего лишнего. Одним из первых их удобство оценил знаменитый американский баскетболист Чак Тейлор. Чак привнес в компанию несколько интересных идей. Как профессиональный спортсмен, он помог Converse сделать кеды более гибкими и увеличить их защитные свойства. По его предложению на боковую поверхность была наклеена круглая заплатка для предохранения щиколотки от ударов и повреждений. На эту часть был нанесен логотип All-Star. Задуманная изначально как обувь для спорта, классика перекочевала на улицы и стала неотъемлемой частью гардероба и бунтарей, и музыкантов разных направлений, артистов, художников, мыслителей и поэтов. Модель All-Star Chuck Taylor давно превратилась в своеобразный символ поколений и является одним из самых узнаваемых силуэтов в мире.
+
+        .content__wrapper
+          section(class="slideshow slideshow_inline slideshow_converse" data-arrows="true")
+            a(class="slideshow__slide" style="background-image:url(assets/converse-black-1.jpg)")
+            a(class="slideshow__slide" style="background-image:url(assets/converse-black-2.jpg)")
+            a(class="slideshow__slide" style="background-image:url(assets/converse-black-3.jpg)")
+              
+          <a class="btn-of-order" href="https://fabstore.ru/catalog/iteminfo/fab-lab-x-hot-yoga-black" target="_blank">Купить кеды</a>

@@ -4,7 +4,14 @@
   justify-content: space-between;
 
   &_left { justify-content: flex-start; }
-  
+  &_center { justify-content: center; }
+
+  &_big {
+    .teachers__teacher {
+      width: 25%;
+      max-width: 25%;
+    }
+  }
 }
 
 .teachers__teacher {
@@ -73,4 +80,24 @@
 
 .teachers__teacher__desc {
   display: none;
+}
+
+span.teachers__text {
+  //text-align: left;
+
+  &_short {
+    &:after { 
+      content: "...далее";
+      margin-left: 4px;
+      color: rgba(0, 0, 0, .5);
+      text-decoration: underline;
+    }
+
+    &.teachers__text_hide { display: none }
+  }
+
+  &_long {
+    display: none;
+    &.teachers__text_visible { display: block }
+  }
 }
