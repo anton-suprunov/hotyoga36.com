@@ -7,9 +7,26 @@
   &_center { justify-content: center; }
 
   &_big {
+    @media (max-width: 480px) {
+      .teachers__teacher {
+        min-width: 100%;
+      }
+
+      .teachers__img {
+        max-height: 200px;
+        width: auto;
+      }
+    }
+
     .teachers__teacher {
       width: 25%;
       max-width: 25%;
+    }
+  }
+
+  &_layout3 {
+    @media (min-width: 481px) {
+      .teachers__teacher { min-width: 30%; }
     }
   }
 }
@@ -39,15 +56,12 @@
 }
 
 .teachers__img {
-  //max-width: 250px;
-  //max-height: 250px;
   width: 100%;
   display: block;
   margin: 0 auto;
 
   @include mq('mobileonly') {
     max-width: 100%;
-    //width: auto;
   }
 }
 

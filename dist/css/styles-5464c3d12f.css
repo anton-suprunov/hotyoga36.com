@@ -370,23 +370,16 @@ template {
 [hidden] {
   display: none; }
 
-.lg-sub-html, .lg-toolbar {
-  background-color: rgba(0, 0, 0, 0.45); }
-
-#lg-counter, .lg-outer .lg-video-cont {
-  vertical-align: middle;
-  display: inline-block; }
-
 @font-face {
   font-family: lg;
-  src: url(../fonts/lg.eot?n1z373);
-  src: url(../fonts/lg.eot?#iefixn1z373) format("embedded-opentype"), url(../fonts/lg.woff?n1z373) format("woff"), url(../fonts/lg.ttf?n1z373) format("truetype"), url(../fonts/lg.svg?n1z373#lg) format("svg");
+  src: url(../fonts/lg.ttf?22t19m) format("truetype"), url(../fonts/lg.woff?22t19m) format("woff"), url(../fonts/lg.svg?22t19m#lg) format("svg");
   font-weight: 400;
-  font-style: normal; }
+  font-style: normal;
+  font-display: block; }
 
 .lg-icon {
-  font-family: lg;
-  speak: none;
+  font-family: lg !important;
+  speak: never;
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
@@ -396,7 +389,6 @@ template {
   -moz-osx-font-smoothing: grayscale; }
 
 .lg-actions .lg-next, .lg-actions .lg-prev {
-  background-color: rgba(0, 0, 0, 0.45);
   border-radius: 2px;
   color: #999;
   cursor: pointer;
@@ -406,7 +398,10 @@ template {
   padding: 8px 10px 9px;
   position: absolute;
   top: 50%;
-  z-index: 1080; }
+  z-index: 1080;
+  outline: 0;
+  border: none;
+  background-color: transparent; }
 
 .lg-actions .lg-next.disabled, .lg-actions .lg-prev.disabled {
   pointer-events: none;
@@ -452,7 +447,8 @@ template {
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45); }
 
 .lg-toolbar .lg-icon {
   color: #999;
@@ -466,6 +462,9 @@ template {
   width: 50px;
   text-decoration: none !important;
   outline: 0;
+  background: 0 0;
+  border: none;
+  box-shadow: none;
   transition: color .2s linear; }
 
 .lg-toolbar .lg-icon:hover {
@@ -478,6 +477,7 @@ template {
   content: "\e0f2"; }
 
 .lg-sub-html {
+  background-color: rgba(0, 0, 0, 0.45);
   bottom: 0;
   color: #EEE;
   font-size: 16px;
@@ -499,9 +499,11 @@ template {
 
 #lg-counter {
   color: #999;
+  display: inline-block;
   font-size: 16px;
   padding-left: 20px;
-  padding-top: 12px; }
+  padding-top: 12px;
+  vertical-align: middle; }
 
 .lg-next, .lg-prev, .lg-toolbar {
   opacity: 1;
@@ -581,8 +583,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer .lg-thumb-item img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover; }
+  object-fit: cover; }
 
 .lg-outer.lg-has-thumb .lg-item {
   padding-bottom: 120px; }
@@ -609,15 +610,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   right: 20px;
   text-align: center;
   top: -39px;
-  width: 50px; }
-
-.lg-outer .lg-toggle-thumb:hover, .lg-outer.lg-dropdown-active #lg-share {
-  color: #FFF; }
+  width: 50px;
+  outline: 0;
+  border: none; }
 
 .lg-outer .lg-toggle-thumb:after {
   content: "\e1ff"; }
 
+.lg-outer .lg-toggle-thumb:hover {
+  color: #FFF; }
+
 .lg-outer .lg-video-cont {
+  display: inline-block;
+  vertical-align: middle;
   max-width: 1140px;
   max-height: 100%;
   width: 100%;
@@ -856,6 +861,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 1;
   visibility: visible; }
 
+.lg-outer.lg-dropdown-active #lg-share {
+  color: #FFF; }
+
 .lg-outer .lg-dropdown {
   background-color: #fff;
   border-radius: 2px;
@@ -920,8 +928,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   width: auto; }
 
 .lg-outer, .lg-outer .lg, .lg-outer .lg-inner {
-  width: 100%;
-  height: 100%; }
+  height: 100%;
+  width: 100%; }
 
 .lg-outer #lg-share {
   position: relative; }
@@ -933,32 +941,56 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   color: #3b5998; }
 
 .lg-outer #lg-share-facebook .lg-icon:after {
-  content: "\e901"; }
+  content: "\e904"; }
 
 .lg-outer #lg-share-twitter .lg-icon {
   color: #00aced; }
 
 .lg-outer #lg-share-twitter .lg-icon:after {
-  content: "\e904"; }
+  content: "\e907"; }
 
 .lg-outer #lg-share-googleplus .lg-icon {
   color: #dd4b39; }
 
 .lg-outer #lg-share-googleplus .lg-icon:after {
-  content: "\e902"; }
+  content: "\e905"; }
 
 .lg-outer #lg-share-pinterest .lg-icon {
   color: #cb2027; }
 
 .lg-outer #lg-share-pinterest .lg-icon:after {
+  content: "\e906"; }
+
+.lg-outer .lg-img-rotate {
+  position: absolute;
+  padding: 0 5px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: transform 0.3s cubic-bezier(0.32, 0, 0.67, 0) 0s; }
+
+.lg-rotate-left:after {
+  content: "\e900"; }
+
+.lg-rotate-right:after {
+  content: "\e901"; }
+
+.lg-icon.lg-flip-hor, .lg-icon.lg-flip-ver {
+  font-size: 26px; }
+
+.lg-flip-hor:after {
+  content: "\e902"; }
+
+.lg-flip-ver:after {
   content: "\e903"; }
 
-.group:after, .group:before {
+.lg-group:after, .lg-group:before {
   display: table;
   content: "";
   line-height: 0; }
 
-.group:after {
+.lg-group:after {
   clear: both; }
 
 .lg-outer {
@@ -967,6 +999,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   left: 0;
   z-index: 1050;
   opacity: 0;
+  outline: 0;
   transition: opacity .15s ease 0s; }
 
 .lg-outer * {
@@ -1407,6 +1440,9 @@ body {
   padding: 0 10px 0;
   margin-bottom: 40px;
   margin-top: 40px; }
+
+.highlight {
+  color: #E85A2A; }
 
 /*
 Icon classes can be used entirely standalone. They are named after their original file names.
@@ -2092,9 +2128,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   .teachers_center {
     -ms-flex-pack: center;
         justify-content: center; }
+  @media (max-width: 480px) {
+    .teachers_big .teachers__teacher {
+      min-width: 100%; }
+    .teachers_big .teachers__img {
+      max-height: 200px;
+      width: auto; } }
   .teachers_big .teachers__teacher {
     width: 25%;
     max-width: 25%; }
+  @media (min-width: 481px) {
+    .teachers_layout3 .teachers__teacher {
+      min-width: 30%; } }
 
 .teachers__teacher {
   cursor: pointer;
