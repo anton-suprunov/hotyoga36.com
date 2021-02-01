@@ -18,19 +18,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .icon-fb-2x {
   background-image: url(../img/sprite.png);
-  background-position: -172px -244px;
+  background-position: -256px -122px;
   width: 84px;
   height: 80px;
 }
 .icon-fb-3x {
   background-image: url(../img/sprite.png);
-  background-position: -256px 0px;
+  background-position: 0px 0px;
   width: 126px;
   height: 120px;
 }
 .icon-fb {
   background-image: url(../img/sprite.png);
-  background-position: -384px -198px;
+  background-position: -384px -72px;
   width: 42px;
   height: 40px;
 }
@@ -42,13 +42,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-instagram-3x {
   background-image: url(../img/sprite.png);
-  background-position: 0px -122px;
+  background-position: -128px 0px;
   width: 126px;
   height: 120px;
 }
 .icon-instagram {
   background-image: url(../img/sprite.png);
-  background-position: -384px -156px;
+  background-position: -384px -114px;
   width: 42px;
   height: 40px;
 }
@@ -66,19 +66,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-telegram-3x {
   background-image: url(../img/sprite.png);
-  background-position: 0px 0px;
+  background-position: 0px -122px;
   width: 126px;
   height: 120px;
 }
 .icon-telegram {
   background-image: url(../img/sprite.png);
-  background-position: -384px -72px;
+  background-position: -384px -156px;
   width: 42px;
   height: 40px;
 }
 .icon-vk-2x {
   background-image: url(../img/sprite.png);
-  background-position: -258px -244px;
+  background-position: -172px -244px;
   width: 84px;
   height: 80px;
 }
@@ -90,19 +90,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-vk {
   background-image: url(../img/sprite.png);
-  background-position: -384px -114px;
+  background-position: -384px -198px;
   width: 42px;
   height: 40px;
 }
 .icon-youtube-2x {
   background-image: url(../img/sprite.png);
-  background-position: -256px -122px;
+  background-position: -258px -244px;
   width: 84px;
   height: 80px;
 }
 .icon-youtube-3x {
   background-image: url(../img/sprite.png);
-  background-position: -128px 0px;
+  background-position: -256px 0px;
   width: 126px;
   height: 120px;
 }
