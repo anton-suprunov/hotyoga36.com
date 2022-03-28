@@ -4,7 +4,8 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import gulpif from 'gulp-if';
 import clean from 'gulp-clean';
-import sass from 'gulp-sass';
+import gulpSass from 'gulp-sass';
+import sassLib from 'sass';
 import { reload } from 'browser-sync';
 import prefix from 'gulp-autoprefixer';
 import imagemin from 'gulp-imagemin';
@@ -26,10 +27,9 @@ import rev from 'gulp-rev';
 import revReplace from 'gulp-rev-replace';
 import webpackConfig from './webpack.config';
 
+const sass = gulpSass(sassLib);
 const isProd = gutil.env.production;
-
 const browserlist = ['last 2 versions', '> 1%', 'ie 9', 'Firefox ESR'];
-
 const dirs = {
     src : './src/',
     dist : './dist/'
