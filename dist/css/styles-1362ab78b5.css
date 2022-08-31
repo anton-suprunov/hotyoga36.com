@@ -2283,8 +2283,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 @media (min-width: 1200px) {
   .widgets {
     margin: 0 auto;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
+    -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
     padding-top: 18px;
     width: 850px;
     display: -ms-flexbox;
@@ -2412,6 +2412,11 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 @media (min-width: 980px) {
   .prices {
     table-layout: fixed;
+  }
+}
+@media (max-width: 979px) {
+  .prices {
+    width: 100%;
   }
 }
 

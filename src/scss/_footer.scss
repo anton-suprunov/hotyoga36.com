@@ -53,7 +53,7 @@
 
   @include mq('desktop-large') {
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-top: 18px;
     width: 850px;
     display: flex;

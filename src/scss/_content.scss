@@ -74,6 +74,10 @@
   @include mq('desktop') {
     table-layout: fixed;
   }
+
+  @include mq('mobileonly') {
+    width: 100%;
+  }
 }
 .prices__row {}
 .prices__cell {
