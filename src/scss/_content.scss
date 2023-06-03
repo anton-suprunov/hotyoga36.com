@@ -12,6 +12,7 @@
 .content__columns {
   display: flex;  
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .content__column {

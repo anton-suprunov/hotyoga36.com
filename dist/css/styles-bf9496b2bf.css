@@ -2256,7 +2256,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 70px;
+  left: 0px;
   bottom: 20px;
 }
 @media (min-width: 1200px) {
@@ -2349,6 +2349,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 
 @media (min-width: 980px) {
