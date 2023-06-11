@@ -2275,6 +2275,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 .footer__adr-email {
   color: #000;
   text-decoration: none;
+  font-weight: 700;
 }
 
 .widgets {
