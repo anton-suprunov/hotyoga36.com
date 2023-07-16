@@ -19,11 +19,9 @@
   }
 }
 
-//.slideshow__img { max-width: 100%; }
-
 .slideshow__slide {
   background: {
-    size: cover;
+    size: 100% auto;
     position: 50% 50%;
     repeat: no-repeat;
   }
@@ -60,7 +58,7 @@
 }
 
 .slick-dots {
-  bottom: 20px;
+  bottom: 40px;
   
   li {
     width: 12px;

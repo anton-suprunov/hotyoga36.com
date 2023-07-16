@@ -2151,7 +2151,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   max-width: 500px;
 }
 .slideshow__slide {
-  background-size: cover;
+  background-size: 100% auto;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -2190,7 +2190,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 
 .slick-dots {
-  bottom: 20px;
+  bottom: 40px;
 }
 .slick-dots li {
   width: 12px;
