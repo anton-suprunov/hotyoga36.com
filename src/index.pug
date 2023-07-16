@@ -8,7 +8,7 @@ block content
             { title : '', img : 'assets/slideshow-3.jpg' },
             // { title : 'Karma Has<br> No Deadline', img : 'assets/slideshow-4.jpg' },
         ];
-    section(class="slideshow" data-has-video="false" data-dynamic-height="true")
+    section(class="slideshow slideshow_slide-cover" data-has-video="false" data-dynamic-height="true")
         each slide, index in slideshow
             a(class="slideshow__slide slideshow__slide_" + index style="background-image:url(" + slide.img + ")")
                 span.slideshow__text!= slide.title

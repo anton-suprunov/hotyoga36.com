@@ -27,6 +27,10 @@
   }
   overflow: hidden;
   position: relative;
+
+  .slideshow_slide-cover & {
+    background-size: cover;
+  }
 }
 
 .slideshow__text {
