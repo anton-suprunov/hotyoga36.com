@@ -8,7 +8,7 @@
     "start": "gulp",
     "prod": "gulp build --production",
     "eslint:fix": "eslint/bin/eslint.js --fix app/**/*.js",
-    "deploy": "yarn run prod && git add -A && git commit -m 'changes' && git push origin master && dploy",
+    "deploy": "npm run prod && git add -A && git commit -m 'changes' && git push origin master && dploy",
     "deploy-pages": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
